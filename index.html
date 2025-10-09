@@ -24,7 +24,7 @@ header{
 #heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.25}
 .hero-content{position:relative;z-index:2;padding:40px;display:flex;align-items:center;gap:30px;max-width:1200px;margin:auto;width:100%}
 .logo-wrap{display:flex;align-items:center;gap:20px}
-.logo{width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.logo{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
 .owner-card{background:linear-gradient(180deg,rgba(255,215,0,0.06),transparent);padding:18px;border-radius:14px}
 header h1{font-size:2.8rem;letter-spacing:1px;margin-bottom:6px}
 header p{font-size:1.05rem;margin-bottom:12px;opacity:0.95}
@@ -45,11 +45,12 @@ section h2::after{content:"";display:block;width:60px;height:3px;background:var(
 .about div{flex:1}
 .about p{font-size:1.05rem;line-height:1.7;color:#444}
 /* Services */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:#fff;border-radius:14px;padding:22px;text-align:left;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
-.card i{font-size:2rem;color:var(--gold);margin-bottom:12px}
-.card h3{margin-bottom:8px}
-.card p{color:#555}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border-radius:14px;padding:22px;text-align:left;box-shadow:0 8px 20px rgba(0,0,0,0.06);transition: transform 0.3s ease, box-shadow 0.3s ease;}
+.card:hover{transform: translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.15);}
+.card i{font-size:2.5rem;margin-bottom:12px;color:#FFD700;}
+.card h3{margin-bottom:12px;color:#111;}
+.card ul{list-style: disc inside; color:#555; line-height:1.6;}
 /* Portfolio */
 .portfolio-slider{position:relative;overflow:hidden;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
 .slides{display:flex;transition:transform 0.7s ease-in-out}
@@ -68,7 +69,7 @@ footer a{color:#fff;margin:0 10px}
 /* Back to top */
 #backToTop{position:fixed;bottom:30px;right:30px;background:var(--gold-gradient);color:#111;border:none;padding:12px 16px;border-radius:50px;cursor:pointer;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.3);z-index:1000}
 .tagline{font-size:1.1rem;font-weight:500;color:#fff;opacity:0.9;margin-bottom:12px;transition: transform 0.6s ease, opacity 0.6s ease;}
-@media(max-width:768px){header{height:auto;padding:40px 0}header h1{font-size:1.8rem}.hero-content{flex-direction:column;align-items:flex-start}.logo{width:120px;height:120px}}
+@media(max-width:768px){header{height:auto;padding:40px 0}header h1{font-size:1.8rem}.hero-content{flex-direction:column;align-items:flex-start}.logo{width:100px;height:100px}}
 </style>
 </head>
 <body>
@@ -83,7 +84,7 @@ footer a{color:#fff;margin:0 10px}
   </nav>
   <div class="hero-content">
     <div class="logo-wrap">
-      <img src="pkn.jpg" alt="Pankaj Tambe" class="logo">
+      <img src="sp.jpg" alt="Sparsh Infotech Logo" class="logo">
     </div>
     <div class="owner-card">
       <h1>Sparsh Infotech</h1>
@@ -102,7 +103,8 @@ footer a{color:#fff;margin:0 10px}
   <div class="about">
     <img src="images/Aspose.Words.f2788b97-a67e-44b4-a673-1bdbe3b36693.001.jpeg" alt="Our Team">
     <div>
-      <p><strong>Sparsh Infotech</strong> — Professional IT and digital solutions company. Our mission is to help businesses grow through technology. We provide IT solutions for small businesses, schools, banks, shops, offices, and homes, including hardware setup, networking, CCTV, and annual maintenance contracts.</p>
+      <p><strong>Sparsh Infotech</strong> — Professional IT and digital solutions provider based in India. Our mission is to help businesses grow through innovative technology. We offer IT solutions for small businesses, schools, banks, shops, offices, and homes, including hardware setup, networking, CCTV, and annual maintenance contracts (AMC).</p>
+      <p><strong>Company Registration Number:</strong> UDYAM_MH-28-0078744</p>
     </div>
   </div>
 </section>
@@ -110,12 +112,46 @@ footer a{color:#fff;margin:0 10px}
 <section id="services">
   <h2>Our Services</h2>
   <div class="cards">
-    <div class="card"><i class="fas fa-network-wired"></i><h3>Networking & Internet Setup</h3><p>Wireless/Wired cabling, router configuration, VLAN, internet repeaters, and fiber setups.</p></div>
-    <div class="card"><i class="fas fa-print"></i><h3>Printer Repair & Maintenance</h3><p>Printer repair, toner replacement, annual maintenance contracts (AMC).</p></div>
-    <div class="card"><i class="fas fa-laptop"></i><h3>PC / Laptop Hardware</h3><p>New computers & laptops, hardware upgrades, annual maintenance (AMC).</p></div>
-    <div class="card"><i class="fas fa-shield-virus"></i><h3>CCTV & DVR / NVR</h3><p>Camera installation, DVR/NVR setup, AMC, remote monitoring options.</p></div>
-    <div class="card"><i class="fas fa-store"></i><h3>Business Solutions</h3><p>IT packages and annual service contracts for schools, banks, shops, offices, and homes.</p></div>
-    <div class="card"><i class="fas fa-box"></i><h3>Equipment & Supplies</h3><p>Computers, laptops, printers, toner, CCTV, and other equipment available for purchase.</p></div>
+    <div class="card">
+      <i class="fas fa-laptop-code"></i>
+      <h3>Computer Hardware</h3>
+      <ul>
+        <li>Desktop & Laptop repair: Hard drive, RAM, motherboard, CPU, GPU upgrade/repair.</li>
+        <li>Peripheral setup: Printer, scanner, keyboard, mouse installation.</li>
+        <li>OS installation: Windows, Linux, Mac OS.</li>
+        <li>Virus removal / optimization: System clean-up, antivirus install, speed optimization.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <i class="fas fa-network-wired"></i>
+      <h3>Networking</h3>
+      <ul>
+        <li>LAN/WAN setup: Router, switch, hub connection.</li>
+        <li>Cabling: CAT5/CAT6 cables, fiber optics.</li>
+        <li>IP configuration: Static & dynamic IP setup, troubleshooting.</li>
+        <li>Wi-Fi setup: Secure wireless networks, extenders installation.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <i class="fas fa-video"></i>
+      <h3>CCTV Installation</h3>
+      <ul>
+        <li>Camera mounting: Indoor/outdoor cameras.</li>
+        <li>Wiring & power supply: Proper wiring setup for cameras.</li>
+        <li>DVR/NVR configuration: Recording device install & configuration.</li>
+        <li>Remote monitoring: Mobile app/PC live feed setup.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <i class="fas fa-bolt"></i>
+      <h3>Electrical Work</h3>
+      <ul>
+        <li>Wiring: Switch, socket, fan, tube light wiring.</li>
+        <li>Appliance connection: AC, geyser, motor, pump.</li>
+        <li>Maintenance: Fuse, MCB replacement, short-circuit fixing.</li>
+        <li>Backup system: UPS, stabilizer installation & maintenance.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -144,7 +180,6 @@ footer a{color:#fff;margin:0 10px}
       </div>
       <p style="margin-top:12px;color:#555">Call or WhatsApp us — we provide solutions tailored to your needs and budget.</p>
     </div>
-
     <div class="contact-card">
       <form action="https://formspree.io/f/your_form_id" method="POST">
         <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px">
@@ -157,8 +192,13 @@ footer a{color:#fff;margin:0 10px}
 </section>
 
 <footer>
-  &copy; 2025 Sparsh Infotech | <strong>Pankaj Tambe</strong>
-  <div style="margin-top:12px">Follow us: <a href="#"><i class="fab fa-facebook"></i></a> <a href="#"><i class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-linkedin"></i></a></div>
+  &copy; 2025 Sparsh Infotech | <strong>Pankaj Tambe</strong><br>
+  Company Registration: UDYAM_MH-28-0078744
+  <div style="margin-top:12px">Follow us: 
+    <a href="#"><i class="fab fa-facebook"></i></a> 
+    <a href="#"><i class="fab fa-instagram"></i></a> 
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
 </footer>
 
 <button id="backToTop">⬆️</button>
