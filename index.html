@@ -7,88 +7,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-:root{
-  --primary-dark:#111;
-  --gold:#FFD700;
-  --gold-gradient:linear-gradient(135deg,#FFD700,#FFC107);
-  --gold-light:#FFE066;
-  --white:#fff;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Roboto',sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;transition:0.3s;}
-h1,h2,h3,h4,h5,h6{font-weight:700;}
-header{position:relative;width:100%;height:100vh;overflow:hidden;background:linear-gradient(135deg,#111,#222);color:var(--gold);}
-#heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
-.hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;}
-header h1{font-size:4rem;letter-spacing:2px;text-shadow:0 3px 15px rgba(255,215,0,0.5);margin-bottom:15px;}
-header p{font-size:1.3rem;margin-bottom:35px;opacity:0.85;}
-header .btn{font-size:1.2rem;padding:18px 45px;border-radius:50px;background:var(--gold-gradient);color:#111;font-weight:bold;box-shadow:0 5px 25px rgba(255,215,0,0.3);transition:0.4s;}
-header .btn:hover{background:var(--gold-light);transform:translateY(-3px);box-shadow:0 12px 30px rgba(255,215,0,0.5);}
-nav{position:absolute;top:20px;right:20px;z-index:2;}
-nav a{color:var(--gold-light);margin-left:25px;font-weight:bold;font-size:1.05rem;}
-nav a:hover{color:var(--gold);}
-
+:root{--primary-dark:#111;--gold:#FFD700;--gold-gradient:linear-gradient(135deg,#FFD700,#FFC107);--gold-light:#FFE066;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Roboto',sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth}
+a{text-decoration:none;color:inherit;transition:0.3s}h1,h2,h3,h4,h5,h6{font-weight:700}
+header{position:relative;width:100%;height:85vh;overflow:hidden;background:linear-gradient(135deg,#0b0b0b,#1a1a1a);color:var(--gold);display:flex;align-items:center}
+#heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.25}
+.hero-content{position:relative;z-index:2;padding:40px;display:flex;align-items:center;gap:30px;max-width:1200px;margin:auto;width:100%}
+.logo-wrap{display:flex;align-items:center;gap:20px}
+.logo{width:120px;height:120px;border-radius:18px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.owner-card{background:linear-gradient(180deg,rgba(255,215,0,0.06),transparent);padding:18px;border-radius:14px}
+header h1{font-size:2.8rem;letter-spacing:1px;margin-bottom:6px}
+header p{font-size:1.05rem;margin-bottom:12px;opacity:0.95}
+.header-cta{display:flex;flex-direction:row;gap:12px;align-items:center}
+.btn-primary{font-size:1rem;padding:12px 20px;border-radius:50px;background:var(--gold-gradient);color:#111;font-weight:700;box-shadow:0 8px 30px rgba(255,215,0,0.18)}
+.btn-phone{background:transparent;border:2px solid var(--gold);padding:10px 16px;border-radius:12px;color:var(--gold);font-weight:700}
+nav{position:absolute;top:20px;right:20px;z-index:3}
+nav a{color:var(--gold-light);margin-left:20px;font-weight:700}
+nav a:hover{color:var(--gold)}
 /* Sections */
-section{padding:80px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(40px);transition:1s ease;}
-section.fade-in{opacity:1;transform:translateY(0);}
-section h2{text-align:center;font-size:2.8rem;margin-bottom:40px;color:var(--primary-dark);position:relative;}
-section h2::after{content:"";display:block;width:60px;height:3px;background:var(--gold-gradient);margin:15px auto 0;border-radius:2px;}
-
+section{padding:80px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(40px);transition:1s ease}
+section.fade-in{opacity:1;transform:translateY(0)}
+section h2{text-align:center;font-size:2.4rem;margin-bottom:30px;color:var(--primary-dark);position:relative}
+section h2::after{content:"";display:block;width:60px;height:3px;background:var(--gold-gradient);margin:15px auto 0;border-radius:2px}
 /* About */
-.about{display:flex;flex-wrap:wrap;align-items:center;gap:40px;}
-.about img{width:100%;max-width:500px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
-.about div{flex:1;}
-.about p{font-size:1.15rem;line-height:1.8;color:#555;}
-
-/* Cards / Services */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
-.card{background:#fff;border-radius:20px;padding:35px 25px;text-align:center;box-shadow:0 5px 25px rgba(0,0,0,0.1);transition:0.5s;}
-.card i{font-size:3rem;color:var(--gold);margin-bottom:20px;transition:0.4s;}
-.card:hover i{transform:scale(1.4) rotate(10deg);color:var(--gold-gradient);}
-.card h3{margin-bottom:15px;}
-.card p{color:#555;}
-
-/* Portfolio */
-.portfolio-slider{position:relative;overflow:hidden;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
-.slides{display:flex;transition:transform 0.7s ease-in-out;}
-.slides img{width:100%;border-radius:20px;}
-.slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:var(--gold-gradient);color:#111;border:none;font-size:22px;padding:12px 18px;border-radius:50%;cursor:pointer;opacity:0.85;transition:0.3s;}
-.slider-btn:hover{opacity:1;background:var(--gold-light);}
-.prev{left:15px;} .next{right:15px;}
-
-/* Testimonials */
-.testimonials{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
-.testimonial{background:white;padding:30px;border-radius:20px;max-width:350px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.12);transition:0.4s;}
-.testimonial img{width:90px;height:90px;border-radius:50%;margin-bottom:20px;object-fit:cover;}
-.testimonial h4{color:var(--gold);margin-bottom:10px;}
-.testimonial p{font-style:italic;color:#555;}
-.testimonial:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.18);}
-
-/* Tables */
-table{width:100%;border-collapse:collapse;margin:20px 0;}
-table, th, td{border:1px solid #ddd;}
-th, td{padding:10px;text-align:left;}
-th{background:#f4f4f4;}
-
+.about{display:flex;flex-wrap:wrap;align-items:center;gap:30px}
+.about img{width:100%;max-width:420px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.about div{flex:1}
+.about p{font-size:1.05rem;line-height:1.7;color:#444}
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#fff;border-radius:14px;padding:22px;text-align:left;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+.card i{font-size:2rem;color:var(--gold);margin-bottom:12px}
+.card h3{margin-bottom:8px}
+.card p{color:#555}
 /* Contact */
-form{max-width:550px;margin:auto;display:flex;flex-direction:column;gap:25px;}
-input,textarea{padding:15px 18px;border-radius:12px;border:1px solid #ddd;font-size:1rem;}
-input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 10px rgba(255,215,0,0.3);outline:none;}
-button{background:var(--gold-gradient);color:#111;padding:15px;border:none;border-radius:12px;font-weight:bold;cursor:pointer;transition:0.3s;}
-button:hover{background:var(--gold-light);transform:scale(1.05);}
-
+.contact-grid{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+.contact-card{flex:1;min-width:280px;background:linear-gradient(180deg,#fff,#fff);padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.07)}
+.contact-card .big{font-size:1.3rem;font-weight:700;color:var(--primary-dark)}
+.contact-list{margin-top:12px;color:#555;line-height:1.7}
+/* Portfolio slider simplified */
+.portfolio-slider{position:relative;overflow:hidden;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+.slides{display:flex;transition:transform 0.7s ease-in-out}
+.slides img{width:100%;border-radius:14px}
 /* Footer */
-footer{background:#111;color:#fff;text-align:center;padding:50px 20px;}
-footer a{color:#fff;margin:0 12px;font-size:1.3rem;transition:0.3s;}
-footer a:hover{color:var(--gold-light);}
-footer .links{margin-top:20px;font-size:0.9rem;opacity:0.85;}
-
+footer{background:#111;color:#fff;text-align:center;padding:40px 20px}
+footer a{color:#fff;margin:0 10px}
 /* Back to top */
-#backToTop{position:fixed;bottom:30px;right:30px;background:var(--gold-gradient);color:#111;border:none;padding:14px 20px;border-radius:50px;cursor:pointer;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.3);z-index:1000;transition:0.3s;}
-#backToTop:hover{transform:scale(1.1);box-shadow:0 12px 35px rgba(255,215,0,0.5);}
-
-@media(max-width:768px){header h1{font-size:3rem;}header p{font-size:1.1rem;}.about{flex-direction:column;gap:30px;}.cards{grid-template-columns:1fr;}}
+#backToTop{position:fixed;bottom:30px;right:30px;background:var(--gold-gradient);color:#111;border:none;padding:12px 16px;border-radius:50px;cursor:pointer;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.3);z-index:1000}
+@media(max-width:768px){header{height:auto;padding:40px 0}header h1{font-size:1.8rem}.hero-content{flex-direction:column;align-items:flex-start}.logo{width:100px;height:100px}}
 </style>
 </head>
 <body>
@@ -102,70 +68,82 @@ footer .links{margin-top:20px;font-size:0.9rem;opacity:0.85;}
     <a href="#contact">Contact</a>
   </nav>
   <div class="hero-content">
-    <img src="sp.png" alt="Sparsh Infotech Logo" class="logo">
-    <h1>Sparsh Infotech</h1>
-    <p>Smart digital solutions to grow your business online</p>
-    <a href="#contact" class="btn">Get in Touch</a>
+    <div class="logo-wrap">
+      <!-- Replace pankaj.jpg with your real photo -->
+      <img src="pankaj.jpg" alt="Pankaj Tambe" class="logo">
+    </div>
+    <div class="owner-card">
+      <h1>Sparsh Infotech</h1>
+      <p><strong>Pankaj Tambe</strong> <span style="color:#fff;opacity:0.9">(Owner)</span></p>
+      <p>Smart digital & IT solutions — Networking, Hardware, Maintenance, CCTV & more.</p>
+      <div class="header-cta" style="margin-top:12px">
+        <!-- Replace +91-XXXXXXXXXX with your phone number -->
+        <a href="tel:+91-9527023124" class="btn-primary">Call: +91-9527023124</a>
+        <a href="https://wa.me/9527023124" target="_blank" class="btn-phone"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
   </div>
 </header>
 
 <section id="about">
-  <h2>About Us</h2>
+  <h2>आमची ओळख</h2>
   <div class="about">
     <img src="images/Aspose.Words.f2788b97-a67e-44b4-a673-1bdbe3b36693.001.jpeg" alt="Our Team">
     <div>
-      <p><strong>Sparsh Infotech</strong> provides professional IT & Electrical solutions. Our mission is to grow businesses via digital transformation.</p>
+      <p><strong>Sparsh Infotech</strong> — आम्ही व्यावसायिक IT व इलेक्ट्रिकल सोल्यूशन्स पुरवतो. आमचे उद्दीष्ट म्हणजे डिजिटल परिवर्तनाद्वारे तुमचा व्यवसाय वाढवणे. आम्ही लहान उद्योग, शाळा, बँक, दुकाने, कार्यालये व घरांसाठी भरपूर समाधान देतो.</p>
     </div>
   </div>
 </section>
 
 <section id="services">
-  <h2>Our Services</h2>
+  <h2>आमचे सेवा</h2>
   <div class="cards">
-    <div class="card"><i class="fas fa-code"></i><h3>Web Development</h3><p>Responsive, modern websites tailored to your brand.</p></div>
-    <div class="card"><i class="fas fa-search"></i><h3>SEO Optimization</h3><p>Boost visibility and reach the top of search results.</p></div>
-    <div class="card"><i class="fas fa-bullhorn"></i><h3>Digital Marketing</h3><p>Engage your audience effectively with smart campaigns.</p></div>
+    <div class="card"><i class="fas fa-network-wired"></i><h3>नेटवर्किंग व इंटरनेट सेटअप</h3><p>वायरलेस / वायर कटिक्षन, राउटर-कॉन्फिगरेशन, VLAN, इंटरनेट रिपीटर व फाइबर सेटअप.</p></div>
+    <div class="card"><i class="fas fa-print"></i><h3>प्रिंटर दुरुस्ती व मेंटेनन्स</h3><p>प्रिंटर रिपेअर, टोनर बदलणे, प्रिंटर मेंटेनन्स व सेवा करार (AMC).</p></div>
+    <div class="card"><i class="fas fa-laptop"></i><h3>PC / Laptop हार्डवेअर</h3><p>नवीन संगणक व लॅपटॉप विक्री, हार्डवेअर अपग्रेड, वार्षिक मेंटेनन्स (AMC).</p></div>
+    <div class="card"><i class="fas fa-shield-virus"></i><h3>CCTV & DVR / NVR</h3><p>कॅमेरा इंस्टॉलेशन, DVR / NVR सेटअप, AMC व रिमोट मॉनिटरिंग पर्याय.</p></div>
+    <div class="card"><i class="fas fa-store"></i><h3>व्यवसायासाठी सोल्यूशन्स</h3><p>शाळा, बँक, दुकान, ऑफिस व हॉम साठी IT पॅकेजेस आणि वार्षिक सेवा करार.</p></div>
+    <div class="card"><i class="fas fa-box"></i><h3>उपकरणे व साहित्य</h3><p>नवीन संगणक, लॅपटॉप, प्रिंटर, टोनर, CCTV आणि इतर उपकरणे उपलब्ध.</p></div>
   </div>
 </section>
 
 <section id="portfolio">
-  <h2>Portfolio</h2>
+  <h2>Portfolio — कामाची उदाहरणे</h2>
   <div class="portfolio-slider">
     <div class="slides">
       <img src="poster.jpg" alt="Project 1">
       <img src="https://via.placeholder.com/1200x500/333333/FFD700?text=Project+2" alt="Project 2">
     </div>
-    <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
-    <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
   </div>
 </section>
 
 <section id="contact">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/your_form_id" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+  <h2>संपर्क करा</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="big">Pankaj Tambe (Owner)</div>
+      <div class="contact-list">
+        <div>Phone: <a href="tel:+91-9527023124"></a></div>
+        <div>Email: <a href="mailto:contact@sparshinfotech.com">contact@sparshinfotech.com</a></div>
+        <div>Address: Available on request</div>
+      </div>
+      <p style="margin-top:12px;color:#555">आम्हाला कॉल किंवा व्हॉट्सॲप करा — आम्ही रक्कम आणि गरजेनुसार योग्य सोल्यूशन्स देतो.</p>
+    </div>
 
-<section>
-  <h2>Book a Service</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeHFWAI8e4xrSKHfBqgZu3oSpYVaGjHW3iyYYEncDWLozwVxQ/viewform?embedded=true" width="700" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div class="contact-card">
+      <form action="https://formspree.io/f/your_form_id" method="POST">
+        <input type="text" name="name" placeholder="तुमचं नाव" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px">
+        <input type="email" name="email" placeholder="ई-मेल" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px">
+        <textarea name="message" placeholder="तुमचा मेसेज" rows="5" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px"></textarea>
+        <button type="submit" style="background:var(--gold-gradient);border:none;padding:12px 16px;border-radius:8px;font-weight:700">Send Message</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-  &copy; 2025 Sparsh Infotech | Follow us:
-  <a href="#"><i class="fab fa-facebook"></i></a>
-  <a href="#"><i class="fab fa-instagram"></i></a>
-  <a href="#"><i class="fab fa-linkedin"></i></a>
-  <div class="links">
-    <a href="#about">About</a> | 
-    <a href="#services">Services</a> | 
-    <a href="#portfolio">Portfolio</a> | 
-    <a href="#contact">Contact</a>
-  </div>
+  &copy; 2025 Sparsh Infotech | <strong>Pankaj Tambe</strong>
+  <div style="margin-top:12px">Follow us: <a href="#"><i class="fab fa-facebook"></i></a> <a href="#"><i class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-linkedin"></i></a></div>
 </footer>
 
 <button id="backToTop">⬆️</button>
@@ -173,56 +151,16 @@ footer .links{margin-top:20px;font-size:0.9rem;opacity:0.85;}
 <script>
 // Scroll animations
 const sections=document.querySelectorAll('section');
-window.addEventListener('scroll',()=>{
-  const trigger=window.scrollY+window.innerHeight-100;
-  sections.forEach(sec=>{if(trigger>sec.offsetTop)sec.classList.add('fade-in');});
-});
-
+window.addEventListener('scroll',()=>{const trigger=window.scrollY+window.innerHeight-100;sections.forEach(sec=>{if(trigger>sec.offsetTop)sec.classList.add('fade-in');});});
 // Back to top
-const backBtn=document.getElementById('backToTop');
-window.addEventListener('scroll',()=>{ backBtn.style.display=window.scrollY>300?'block':'none'; });
-backBtn.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
-
-// Portfolio slider
-const slides=document.querySelector('.slides');
-const images=document.querySelectorAll('.slides img');
-let idx=0;
-function showSlide(){ slides.style.transform=`translateX(${-idx*100}%)`; }
-document.querySelector('.next').addEventListener('click',()=>{ idx=(idx+1)%images.length; showSlide(); });
-document.querySelector('.prev').addEventListener('click',()=>{ idx=(idx-1+images.length)%images.length; showSlide(); });
-let autoSlide=setInterval(()=>{ idx=(idx+1)%images.length; showSlide(); },5000);
-slides.addEventListener('mouseenter',()=>clearInterval(autoSlide));
-slides.addEventListener('mouseleave',()=>autoSlide=setInterval(()=>{ idx=(idx+1)%images.length; showSlide(); },5000));
-
-// Hero particles + sparkles
-const canvas = document.getElementById('heroCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-let particlesArray=[], colors=['#FFD700','#FFC107','#FFE066'];
-
-// Particle class
-class Particle{
-  constructor(){
-    this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height;
-    this.size=Math.random()*3+1;
-    this.speedX=(Math.random()-0.5)*1; this.speedY=(Math.random()-0.5)*1;
-    this.color=colors[Math.floor(Math.random()*colors.length)];
-  }
-  update(){ this.x+=this.speedX; this.y+=this.speedY; if(this.x<0||this.x>canvas.width)this.speedX*=-1; if(this.y<0||this.y>canvas.height)this.speedY*=-1; }
-  draw(){ ctx.fillStyle=this.color; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill(); }
-}
-function initParticles(){ particlesArray=[]; for(let i=0;i<120;i++) particlesArray.push(new Particle()); }
-function animate(){ ctx.clearRect(0,0,canvas.width,canvas.height); particlesArray.forEach(p=>{p.update();p.draw();}); requestAnimationFrame(animate); }
-initParticles(); animate();
-window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; initParticles(); });
-
-// Mouse-following sparkles
-const sparkles=[];
-document.addEventListener('mousemove',e=>{
-  sparkles.push({x:e.clientX,y:e.clientY,size:Math.random()*3+2,life:60,color:colors[Math.floor(Math.random()*colors.length)],speedX:(Math.random()-0.5)*1.5,speedY:(Math.random()-0.5)*1.5});
-});
-function animateSparkles(){ for(let i=sparkles.length-1;i>=0;i--){ const p=sparkles[i]; p.x+=p.speedX; p.y+=p.speedY; p.life--; ctx.fillStyle=p.color; ctx.globalAlpha=p.life/60; ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill(); ctx.globalAlpha=1; if(p.life<=0)sparkles.splice(i,1); } requestAnimationFrame(animateSparkles); }
-animateSparkles();
+const backBtn=document.getElementById('backToTop');window.addEventListener('scroll',()=>{ backBtn.style.display=window.scrollY>300?'block':'none'; });backBtn.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+// Simple slider
+const slides=document.querySelector('.slides');const images=document.querySelectorAll('.slides img');let idx=0;function showSlide(){ slides.style.transform=`translateX(${-idx*100}%)`; }setInterval(()=>{ idx=(idx+1)%images.length; showSlide(); },5000);
+// Hero particles (lighter)
+const canvas = document.getElementById('heroCanvas');const ctx = canvas.getContext('2d');function setSize(){canvas.width = window.innerWidth; canvas.height = window.innerHeight;}setSize();window.addEventListener('resize',setSize);
+let particles=[];const colors=['#FFD700','#FFC107','#FFE066'];class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.r=Math.random()*2+0.5;this.vx=(Math.random()-0.5)*0.6;this.vy=(Math.random()-0.5)*0.6;this.c=colors[Math.floor(Math.random()*colors.length)];}update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1;}draw(){ctx.fillStyle=this.c;ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();}}
+function init(){particles=[];for(let i=0;i<60;i++)particles.push(new Particle());}
+function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(anim);}init();anim();
 </script>
 </body>
 </html>
