@@ -1,222 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sparsh Infotech – Complete IT & Gold Edition</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sparsh Infotech — 3D Gold Theme (Updated)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-:root{
-  --primary-dark:#111;
-  --gold:#FFD700;
-  --gold-gradient:linear-gradient(135deg,#FFD700,#FFC107);
-  --gold-light:#FFE066;
-  --white:#fff;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Roboto',sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth}
-a{text-decoration:none;color:inherit;transition:0.3s}
-h1,h2,h3,h4,h5,h6{font-weight:700;}
-header{position:relative;width:100%;height:85vh;overflow:hidden;background:linear-gradient(135deg,#0b0b0b,#1a1a1a);color:var(--gold);display:flex;justify-content:space-between;align-items:center;padding:40px;}
-#heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.25}
-.header-left{display:flex;flex-direction:column;align-items:center;gap:20px;z-index:2;}
-.header-left .logo{width:150px;height:150px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,0.4);}
-.header-left h1{font-size:3rem;font-weight:900;color:var(--gold);margin-top:10px;}
-.header-left p{font-size:1.2rem;color:#fff;opacity:0.9;margin-top:6px;text-align:center;}
-.header-right{display:flex;flex-direction:column;align-items:center;z-index:2;}
-.header-right img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,0.4);}
-.header-right .owner-name{margin-top:10px;font-size:1.2rem;color:#fff;opacity:0.9;font-weight:700;text-align:center;}
-nav{position:absolute;top:20px;right:20px;z-index:3}
-nav a{color:var(--gold-light);margin-left:20px;font-weight:700}
-nav a:hover{color:var(--gold)}
-section{padding:80px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(40px);transition:1s ease}
-section.fade-in{opacity:1;transform:translateY(0)}
-section h2{text-align:center;font-size:2.4rem;margin-bottom:30px;color:var(--primary-dark);position:relative}
-section h2::after{content:"";display:block;width:60px;height:3px;background:var(--gold-gradient);margin:15px auto 0;border-radius:2}
-.about{display:flex;flex-wrap:wrap;align-items:center;gap:30px}
-.about img{width:100%;max-width:420px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
-.about div{flex:1}
-.about p{font-size:1.05rem;line-height:1.7;color:#444}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:#fff;border-radius:14px;padding:22px;text-align:left;box-shadow:0 8px 20px rgba(0,0,0,0.06);transition: transform 0.5s ease, box-shadow 0.5s ease;}
-.card:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,0.2);}
-.card i{font-size:2.5rem;margin-bottom:12px;color:#FFD700;}
-.card h3{margin-bottom:12px;color:#111;}
-.card ul{list-style: disc inside; color:#555; line-height:1.6;}
-.portfolio-slider{position:relative;overflow:hidden;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
-.slides{display:flex;transition:transform 0.7s ease-in-out}
-.slides img{width:100%;border-radius:14px;}
-.prev-slide,.next-slide{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#FFD700;border:none;font-size:2rem;padding:6px 12px;cursor:pointer;border-radius:6px;z-index:5;}
-.prev-slide:hover,.next-slide:hover{background:rgba(0,0,0,0.7);}
-.contact-grid{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
-.contact-card{flex:1;min-width:280px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.07);}
-.contact-card:hover{transform: scale(1.02);}
-.contact-card .big{font-size:1.3rem;font-weight:700;color:var(--primary-dark)}
-.contact-list{margin-top:12px;color:#555;line-height:1.7}
-footer{background:#111;color:#fff;text-align:center;padding:40px 20px}
-footer a{color:#fff;margin:0 10px}
-#backToTop{position:fixed;bottom:30px;right:30px;background:var(--gold-gradient);color:#111;border:none;padding:12px 16px;border-radius:50px;cursor:pointer;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.3);z-index:1000;}
-#backToTop:hover{transform: scale(1.1);}
-@media(max-width:768px){
-  header{flex-direction:column;height:auto;padding:20px;align-items:center;}
-  nav{position:static;margin-top:20px;}
-}
+:root{--bg:#0b0b0f;--card:#0f1720;--muted:#b8c0c8;--gold:#ffd166;--glass:rgba(255,255,255,0.04);}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#05060a 0%, #0f1418 100%);color:#e6eef6}
+a{color:inherit}
+.container{max-width:1200px;margin:26px auto;padding:22px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:18px}
+.logo{width:92px;height:92px;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.6);border:2px solid rgba(255,209,102,0.12);background:linear-gradient(135deg,#1b1f2a,#0f1116)}
+.logo img{width:100%;height:100%;object-fit:cover}
+.title{line-height:1}
+.title h1{font-size:1.6rem;letter-spacing:0.6px;color:var(--gold)}
+.title p{font-size:0.9rem;color:var(--muted)}
+.nav{display:flex;gap:12px}
+.nav a{padding:8px 12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02);font-weight:600;color:var(--muted)}
+.hero{margin-top:20px;display:grid;grid-template-columns:1fr 380px;gap:20px}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);border-radius:14px;padding:18px;backdrop-filter:blur(6px);box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+.hero-left h2{font-size:1.4rem;color:var(--gold);margin-bottom:8px}
+.hero-left p{color:var(--muted);line-height:1.6}
+.callouts{display:flex;gap:10px;margin-top:14px}
+.callout{flex:1;background:var(--card);padding:10px;border-radius:10px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.callout h3{font-size:1rem;color:var(--gold)}
+.callout p{font-size:0.85rem;color:var(--muted)}
+.hero-right{display:flex;flex-direction:column;gap:12px;align-items:center}
+.profile{width:100%;border-radius:12px;overflow:hidden;border:2px solid rgba(255,209,102,0.08)}
+.profile img{width:100%;height:300px;object-fit:cover}
+.owner{margin-top:10px;text-align:center}
+.owner h3{color:var(--gold)}
+.owner p{color:var(--muted);font-size:0.9rem}
+.section{margin-top:26px}
+.section h2{font-size:1.15rem;color:var(--gold);margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card3d{perspective:1100px}
+.card-inner{background:linear-gradient(180deg,#0e1419,#0b0e12);border-radius:12px;padding:16px;min-height:150px;transition:transform .45s cubic-bezier(.2,.9,.2,1);transform-style:preserve-3d;border:1px solid rgba(255,255,255,0.03);box-shadow:0 18px 50px rgba(0,0,0,0.7)}
+.card3d:hover .card-inner{transform:rotateY(12deg) translateY(-8px) translateZ(6px)}
+.card3d .icon{font-size:26px;color:var(--gold);margin-bottom:10px}
+.card3d h3{color:#fff;margin-bottom:8px}
+.card3d p{color:var(--muted);font-size:0.92rem;line-height:1.5}
+.long{grid-column:span 3;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.gallery img{width:100%;height:130px;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,0.03);box-shadow:0 18px 40px rgba(0,0,0,0.7);cursor:pointer;transition:transform .35s}
+.gallery img:hover{transform:translateY(-6px) scale(1.03)}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999}
+.lightbox img{max-width:92%;max-height:88%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,0.8)}
+.lightbox .close{position:absolute;top:22px;right:28px;font-size:28px;color:var(--gold);cursor:pointer}
+/* Contact form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e9f0f7}
+textarea{min-height:120px;resize:vertical}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#ffd166,#ffb366);color:#08101a;font-weight:800;border:none;cursor:pointer}
+.small{font-size:0.86rem;color:var(--muted);margin-top:8px}
+.footer{margin-top:20px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);display:flex;justify-content:space-between;align-items:center}
+.footer p{color:var(--muted)}
+@media(max-width:1000px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)} .gallery{grid-template-columns:repeat(2,1fr)} .container{padding:14px}}
+@media(max-width:600px){.grid{grid-template-columns:1fr} .gallery{grid-template-columns:1fr} .form-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<header>
-  <canvas id="heroCanvas"></canvas>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#backup">Data Backup</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#owner">About Pankaj</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="header-left">
-    <img src="sp.jpg" alt="Sparsh Infotech Logo" class="logo">
-    <h1>SPARSH INFOTECH</h1>
-    <p>Computer, Networking, CCTV, Electrical & IT Solutions Managed Professionally</p>
-  </div>
-  <div class="header-right">
-    <img src="pankaj.jpg.jpg" alt="Pankaj Tambe">
-    <div class="owner-name">Pankaj Tambe (Owner)</div>
-  </div>
-</header>
-
-<section id="about">
-  <h2>About Us</h2>
-  <div class="about">
-    <img src="pkn.jpg" alt="Pankaj Tambe">
-    <div>
-      <p><strong>Sparsh Infotech</strong> — Professional IT, Security & Digital Solutions Provider. We deliver complete technology support for Home, Business, and Industry — from installation to maintenance.</p>
-      <p>Our expertise includes computer repair, networking setup, CCTV systems, data backup solutions, electrical works, and annual maintenance contracts.</p>
-      <p><strong>Company Registration Number:</strong> UDYAM_MH-28-0078744</p>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <h2>Our Core Services</h2>
-  <div class="cards">
-    <div class="card"><i class="fas fa-laptop-code"></i><h3>Computer Hardware</h3>
-      <ul><li>Desktop & Laptop repair</li><li>Peripheral setup</li><li>OS installation</li><li>Virus removal & optimization</li></ul>
-    </div>
-    <div class="card"><i class="fas fa-network-wired"></i><h3>Networking</h3>
-      <ul><li>LAN/WAN setup</li><li>Cabling & IP configuration</li><li>Wi-Fi setup</li><li>Server installation</li></ul>
-    </div>
-    <div class="card"><i class="fas fa-video"></i><h3>CCTV Installation</h3>
-      <ul><li>Indoor/Outdoor cameras</li><li>DVR/NVR setup</li><li>Remote monitoring</li><li>Maintenance contracts</li></ul>
-    </div>
-    <div class="card"><i class="fas fa-bolt"></i><h3>Electrical Work</h3>
-      <ul><li>Wiring & load balancing</li><li>Appliance connection</li><li>UPS backup systems</li></ul>
-    </div>
-  </div>
-</section>
-
-<section id="backup">
-  <h2>Data Backup & Recovery</h2>
-  <div class="about">
-    <img src="backup.jpg" alt="Data Recovery">
-    <div>
-      <p>We offer reliable <strong>HDD & SSD data recovery</strong> for crashed drives, accidental deletion, and corrupted partitions.</p>
-      <ul>
-        <li>Full system backup and restore.</li>
-        <li>Cloud-based secure storage.</li>
-        <li>RAID recovery & migration.</li>
-        <li>Business data disaster protection.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="portfolio">
-  <h2>Our Work — Projects & Setup</h2>
-  <div class="portfolio-slider">
-    <div class="slides">
-      <img src="cctv1.jpg" alt="CCTV Installation">
-      <img src="network1.jpg" alt="Networking Setup">
-      <img src="backup1.jpg" alt="Data Backup System">
-    </div>
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
-  </div>
-</section>
-
-<section id="owner">
-  <h2>About Pankaj Tambe</h2>
-  <div class="about">
-    <img src="pankaj2.jpg" alt="Pankaj Tambe">
-    <div>
-      <p><strong>Pankaj Tambe</strong> — Founder of Sparsh Infotech, Network Engineer, and Professional Cricketer. Known for his precision in technology and passion for innovation.</p>
-      <p><strong>Family:</strong><br>
-      Father: Dattaram Ganpat Tambe (Retired Government Employee)<br>
-      Mother: Mayuri Dattaram Tambe (Housewife)<br>
-      Sister: Smita Tambe Khamgoankar</p>
-      <p>“Technology is not just work — it’s art with logic.”</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <div class="big">Pankaj Tambe (Owner)</div>
-      <div class="contact-list">
-        <div>📞 <a href="tel:+91-9527023124">+91-9527023124</a></div>
-        <div>✉️ <a href="mailto:contact@sparshinfotech.com">contact@sparshinfotech.com</a></div>
-        <div>📍 Address: Available on request</div>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo"><img src="sp.jpg" alt="Sparsh Infotech Logo"></div>
+        <div class="title">
+          <h1>Sparsh Infotech</h1>
+          <p>IT • Networking • CCTV • Backup Solutions</p>
+        </div>
       </div>
-      <p style="margin-top:12px;color:#555">Call or WhatsApp — we provide complete IT & Security Solutions.</p>
-    </div>
-    <div class="contact-card">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeHFWAI8e4xrSKHfBqgZu3oSpYVaGjHW3iyYYEncDWLozwVxQ/viewform?embedded=true" width="100%" height="1000" frameborder="0">Loading…</iframe>
-    </div>
-  </div>
-</section>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<footer>
-  &copy; 2025 <strong>Sparsh Infotech</strong> | Designed by <strong>Pankaj Tambe</strong><br>
-  Company Registration: UDYAM_MH-28-0078744
-  <div style="margin-top:12px">Follow us: 
-    <a href="#"><i class="fab fa-facebook"></i></a> 
-    <a href="#"><i class="fab fa-instagram"></i></a> 
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-</footer>
+    <main class="hero">
+      <div class="hero-card hero-left">
+        <h2>Professional IT, Networking & CCTV — Premium 3D Gold Theme</h2>
+        <p>Place the images in the same folder as this HTML: <strong>cctv-camera-installation.jpg, gpt.jpg, camera.jpg, Desktop_PC_Repair.jpg, stp.jpg, prt.jpg, networking.jpg, sp.jpg, pankaj.jpg, backup1.jpg</strong>. The gallery & portfolio will display them automatically.</p>
+        <div class="callouts">
+          <div class="callout"><h3>Networking</h3><p>LAN/WAN, Routers, Managed Switches, PoE & Fiber</p></div>
+          <div class="callout"><h3>CCTV</h3><p>IP/Analog, NVR/DVR, Remote Monitoring</p></div>
+          <div class="callout"><h3>Backup</h3><p>HDD/SSD recovery, NAS & Cloud sync</p></div>
+        </div>
+      </div>
 
-<button id="backToTop">⬆️</button>
+      <aside class="hero-card hero-right">
+        <div class="profile"><img src="pankaj.jpg.jpg" alt="Pankaj Tambe"></div>
+        <div class="owner">
+          <h3>Pankaj Tambe</h3>
+          <p>Network Engineer • Pro Cricket Player • Owner</p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="services" class="section">
+      <h2>Services — Detailed</h2>
+      <div class="grid">
+        <div class="card3d">
+          <div class="card-inner">
+            <div class="icon"><i class="fas fa-network-wired"></i></div>
+            <h3>Networking — Design & Implementation</h3>
+            <p>Structured cabling (CAT5e/CAT6/CAT6A), STP for noisy environments, fiber backbone, VLAN segmentation, managed switches, PoE for cameras, QoS for VoIP, and network documentation with diagrams and labeling.</p>
+          </div>
+        </div>
+
+        <div class="card3d">
+          <div class="card-inner">
+            <div class="icon"><i class="fas fa-video"></i></div>
+            <h3>CCTV — Surveillance Systems</h3>
+            <p>System planning (coverage, blind spots), camera selection (IP vs Analog), PoE cameras, NVR sizing, continuous vs motion recording, remote access setup and periodic maintenance and storage management.</p>
+          </div>
+        </div>
+
+        <div class="card3d">
+          <div class="card-inner">
+            <div class="icon"><i class="fas fa-desktop"></i></div>
+            <h3>Desktop / Laptop Repair</h3>
+            <p>Diagnostics, OS install, driver configuration, hardware replacements (HDD/SSD, RAM, motherboards), thermal management, and on-site quick fixes to minimize downtime.</p>
+          </div>
+        </div>
+
+        <div class="card3d">
+          <div class="card-inner">
+            <div class="icon"><i class="fas fa-print"></i></div>
+            <h3>Printers & Peripherals</h3>
+            <p>Network printer configuration, shared MFP setup, driver deployment, firmware updates, toner/cartridge replacement and advice on lease vs buy for offices.</p>
+          </div>
+        </div>
+
+        <div class="card3d">
+          <div class="card-inner">
+            <div class="icon"><i class="fas fa-hdd"></i></div>
+            <h3>Data Backup & Recovery</h3>
+            <p>HDD & SSD recovery (logical), RAID rebuild assistance, NAS backups, snapshot strategies, encrypted cloud backups and periodic verification of backup integrity.</p>
+          </div>
+        </div>
+
+        <div class="card3d">
+          <div class="card-inner">
+            <div class="icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Security & Maintenance</h3>
+            <p>Firewall & VPN, VLAN isolation, patch management, AMCs for CCTV and networking, monitoring alerts and preventive health checks for critical systems.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="hardware" class="section">
+      <h2>Hardware Notes & Recommendations</h2>
+      <div class="long">
+        <h3>Quick Buying Guide</h3>
+        <ul>
+          <li><strong>Routers:</strong> For small offices, get dual-band gigabit routers with hardware NAT. For larger deployments, prefer enterprise routers with proper VPN/firewall capabilities.</li>
+          <li><strong>Switches:</strong> Use Managed PoE switches for camera deployments. Check total PoE budget (watts) before deploying many cameras.</li>
+          <li><strong>Cameras:</strong> Choose resolution based on need; 2MP for general surveillance, 4MP+ for identification zones. PTZ for wide areas.</li>
+          <li><strong>Storage:</strong> Use NAS with RAID 1/5 for redundancy and keep an offsite/cloud copy for disaster recovery.</li>
+          <li><strong>Cabling:</strong> Prefer CAT6A for future-proofing; use STP where heavy EMI exists.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section">
+      <h2>Portfolio — Click to enlarge</h2>
+      <div class="gallery">
+        <img src="cctv-camera-installation.jpg" alt="cctv-camera-installation" data-full="cctv-camera-installation.jpg">
+        <img src="gpt.jpg" alt="gpt" data-full="gpt.jpg">
+        <img src="camera.jpg" alt="camera" data-full="camera.jpg">
+        <img src="Desktop_PC_Repair.jpg" alt="Desktop PC Repair" data-full="Desktop_PC_Repair.jpg">
+        <img src="stp.jpg" alt="stp cabling" data-full="stp.jpg">
+        <img src="prt.jpg" alt="printer setup" data-full="prt.jpg">
+        <img src="networking.jpg" alt="networking setup" data-full="networking.jpg">
+        <img src="backup1.jpg" alt="backup system" data-full="backup1.jpg">
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact — Offline-friendly Form</h2>
+      <div class="long">
+        <p>Fill this form. If you are offline, the submission will save locally and you can download saved entries later. If you want automatic email delivery, set up <strong>EmailJS</strong> and paste your <em>service ID / template ID / public key</em> in the script below (see comments).</p>
+
+        <form id="contactForm">
+          <div class="form-grid">
+            <input class="input" type="text" id="name" placeholder="Full name" required>
+            <input class="input" type="text" id="phone" placeholder="Phone number" required>
+            <input class="input" type="email" id="email" placeholder="Email" required>
+            <input class="input" type="text" id="subject" placeholder="Subject">
+            <textarea id="message" placeholder="Message / details" required></textarea>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" id="downloadBtn" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">Download Saved</button>
+            <div class="small">Submissions will also open your email client as a fallback to send to: <strong>pankajtambe1221@gmail.com</strong></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Sparsh Infotech — Pankaj Tambe • UDYAM_MH-28-0078744</p>
+      <p>Place images next to this file to display the gallery.</p>
+    </footer>
+  </div>
+
+  <!-- Lightbox element -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="lbClose">✕</span>
+    <img id="lbImg" src="" alt="expanded">
+  </div>
 
 <script>
-// Scroll animations
-const sections=document.querySelectorAll('section');
-window.addEventListener('scroll',()=>{const trigger=window.scrollY+window.innerHeight-100;sections.forEach(sec=>{if(trigger>sec.offsetTop)sec.classList.add('fade-in');});});
-// Back to top
-const backBtn=document.getElementById('backToTop');
-window.addEventListener('scroll',()=>{backBtn.style.display=window.scrollY>300?'block':'none';});
-backBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
-// Hero animation
-const canvas=document.getElementById('heroCanvas');const ctx=canvas.getContext('2d');
-function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
-resize();window.addEventListener('resize',resize);
-const colors=['#FFD700','#FFC107','#FFE066'];let particles=[];
-class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.r=Math.random()*2+0.5;this.vx=(Math.random()-0.5)*0.6;this.vy=(Math.random()-0.5)*0.6;this.c=colors[Math.floor(Math.random()*colors.length)];}
-update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1;}
-draw(){ctx.fillStyle=this.c;ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();}}
-for(let i=0;i<60;i++)particles.push(new Particle());
-function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
-animate();
-// Slider
-const slides=document.querySelector('.slides');const imgs=document.querySelectorAll('.slides img');let i=0;
-function show(){slides.style.transform=`translateX(${-i*100}%)`;}
-setInterval(()=>{i=(i+1)%imgs.length;show();},4000);
-document.querySelector('.prev-slide').onclick=()=>{i=(i-1+imgs.length)%imgs.length;show();};
-document.querySelector('.next-slide').onclick=()=>{i=(i+1)%imgs.length;show();};
-</script>
+// Lightbox functionality
+const galleryImgs = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbClose = document.getElementById('lbClose');
 
+galleryImgs.forEach(img => {
+  img.addEventListener('click', ()=>{
+    const full = img.dataset.full || img.src;
+    lbImg.src = full;
+    lightbox.style.display = 'flex';
+  });
+});
+lbClose.addEventListener('click', ()=> lightbox.style.display='none');
+lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.style.display='none'; });
+
+// Contact form: offline-friendly + mailto fallback + optional EmailJS
+const form = document.getElementById('contactForm');
+const STORAGE_KEY = 'sparsh_submissions_v1';
+
+function loadSaved(){
+  const raw = localStorage.getItem(STORAGE_KEY);
+  try{ return raw? JSON.parse(raw):[] }catch(e){return []}
+}
+function saveEntry(entry){
+  const arr = loadSaved(); arr.push(entry); localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const entry = {
+    name: document.getElementById('name').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    subject: document.getElementById('subject').value.trim(),
+    message: document.getElementById('message').value.trim(),
+    date: new Date().toISOString()
+  };
+
+  // Save locally first
+  saveEntry(entry);
+
+  // Try EmailJS if configured (you must set your keys below)
+  const EMAILJS = {
+    enabled: false, // set true AFTER you paste your keys in the block below
+    serviceID: 'YOUR_EMAILJS_SERVICE_ID',
+    templateID: 'YOUR_EMAILJS_TEMPLATE_ID',
+    publicKey: 'YOUR_EMAILJS_PUBLIC_KEY'
+  };
+
+  if(EMAILJS.enabled && window.emailjs){
+    // send via EmailJS
+    emailjs.init(EMAILJS.publicKey);
+    emailjs.send(EMAILJS.serviceID, EMAILJS.templateID, entry)
+      .then(()=>{alert('Message sent via EmailJS and saved locally.'); form.reset();})
+      .catch(err=>{console.error(err); alert('EmailJS failed; saved locally.');});
+    return;
+  }
+
+  // If online, open mail client as friendly fallback prefilled to Pankaj's email
+  const to = 'pankajtambe1221@gmail.com';
+  const subject = encodeURIComponent(entry.subject || 'Website enquiry from '+entry.name);
+  const body = encodeURIComponent('Name: '+entry.name+"
+Phone: "+entry.phone+"
+Email: "+entry.email+"
+Date: "+entry.date+"
+
+Message:
+"+entry.message);
+  const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+
+  // Try to open mail client
+  window.location.href = mailto;
+  alert('Saved locally. Your email client should open to send a copy to '+to+' (if available).');
+  form.reset();
+});
+
+// Download saved submissions
+const downloadBtn = document.getElementById('downloadBtn');
+downloadBtn.addEventListener('click', ()=>{
+  const data = loadSaved();
+  if(!data.length){ alert('No saved submissions found.'); return; }
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'sparsh_submissions.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+});
+
+// OPTIONAL: If user wants to enable EmailJS, include the script dynamically (user must provide keys)
+// Example usage (do NOT enable by default here):
+// const s = document.createElement('script'); s.src='https://cdn.emailjs.com/sdk/3.2.0/email.min.js'; s.onload = ()=>console.log('EmailJS loaded'); document.head.appendChild(s);
+
+</script>
 </body>
 </html>
