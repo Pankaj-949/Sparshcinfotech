@@ -18,8 +18,6 @@
 body{font-family:'Roboto',sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth}
 a{text-decoration:none;color:inherit;transition:0.3s}
 h1,h2,h3,h4,h5,h6{font-weight:700;}
-
-/* Header */
 header{position:relative;width:100%;height:85vh;overflow:hidden;background:linear-gradient(135deg,#0b0b0b,#1a1a1a);color:var(--gold);display:flex;justify-content:space-between;align-items:center;padding:40px;}
 #heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0.25}
 .header-left{display:flex;flex-direction:column;align-items:center;gap:20px;z-index:2;}
@@ -32,54 +30,36 @@ header{position:relative;width:100%;height:85vh;overflow:hidden;background:linea
 nav{position:absolute;top:20px;right:20px;z-index:3}
 nav a{color:var(--gold-light);margin-left:20px;font-weight:700}
 nav a:hover{color:var(--gold)}
-
-/* Sections */
 section{padding:80px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(40px);transition:1s ease}
 section.fade-in{opacity:1;transform:translateY(0)}
 section h2{text-align:center;font-size:2.4rem;margin-bottom:30px;color:var(--primary-dark);position:relative}
 section h2::after{content:"";display:block;width:60px;height:3px;background:var(--gold-gradient);margin:15px auto 0;border-radius:2}
-
-/* About */
 .about{display:flex;flex-wrap:wrap;align-items:center;gap:30px}
 .about img{width:100%;max-width:420px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.15)}
 .about div{flex:1}
 .about p{font-size:1.05rem;line-height:1.7;color:#444}
-
-/* Services */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:#fff;border-radius:14px;padding:22px;text-align:left;box-shadow:0 8px 20px rgba(0,0,0,0.06);transition: transform 0.5s ease, box-shadow 0.5s ease;transform-style: preserve-3d;}
-.card:hover{transform: rotateY(10deg) scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,0.2);}
-.card i{font-size:2.5rem;margin-bottom:12px;color:#FFD700;transition: transform 0.3s ease;}
-.card i:hover{transform: rotate(15deg) scale(1.2);}
+.card{background:#fff;border-radius:14px;padding:22px;text-align:left;box-shadow:0 8px 20px rgba(0,0,0,0.06);transition: transform 0.5s ease, box-shadow 0.5s ease;}
+.card:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,0.2);}
+.card i{font-size:2.5rem;margin-bottom:12px;color:#FFD700;}
 .card h3{margin-bottom:12px;color:#111;}
 .card ul{list-style: disc inside; color:#555; line-height:1.6;}
-
-/* Portfolio */
 .portfolio-slider{position:relative;overflow:hidden;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.12)}
 .slides{display:flex;transition:transform 0.7s ease-in-out}
-.slides img{width:100%;border-radius:14px;transition:transform 0.5s ease, box-shadow 0.5s ease;}
-.slides img:hover{transform: scale(1.05);box-shadow:0 10px 30px rgba(0,0,0,0.3);}
-.prev-slide,.next-slide{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#FFD700;border:none;font-size:2rem;padding:6px 12px;cursor:pointer;border-radius:6px;z-index:5;transition:background 0.3s ease;}
+.slides img{width:100%;border-radius:14px;}
+.prev-slide,.next-slide{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#FFD700;border:none;font-size:2rem;padding:6px 12px;cursor:pointer;border-radius:6px;z-index:5;}
 .prev-slide:hover,.next-slide:hover{background:rgba(0,0,0,0.7);}
-
-/* Contact */
 .contact-grid{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
-.contact-card{flex:1;min-width:280px;background:linear-gradient(180deg,#fff,#fff);padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.07);transition: transform 0.5s ease;}
+.contact-card{flex:1;min-width:280px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.07);}
 .contact-card:hover{transform: scale(1.02);}
 .contact-card .big{font-size:1.3rem;font-weight:700;color:var(--primary-dark)}
 .contact-list{margin-top:12px;color:#555;line-height:1.7}
-
-/* Footer */
 footer{background:#111;color:#fff;text-align:center;padding:40px 20px}
 footer a{color:#fff;margin:0 10px}
-
-/* Back to top */
-#backToTop{position:fixed;bottom:30px;right:30px;background:var(--gold-gradient);color:#111;border:none;padding:12px 16px;border-radius:50px;cursor:pointer;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.3);z-index:1000;transition:transform 0.3s ease;}
+#backToTop{position:fixed;bottom:30px;right:30px;background:var(--gold-gradient);color:#111;border:none;padding:12px 16px;border-radius:50px;cursor:pointer;display:none;box-shadow:0 8px 30px rgba(0,0,0,0.3);z-index:1000;}
 #backToTop:hover{transform: scale(1.1);}
-
 @media(max-width:768px){
   header{flex-direction:column;height:auto;padding:20px;align-items:center;}
-  .header-left,.header-right{flex-direction:column;align-items:center;}
   nav{position:static;margin-top:20px;}
 }
 </style>
@@ -91,7 +71,9 @@ footer a{color:#fff;margin:0 10px}
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#backup">Data Backup</a>
     <a href="#portfolio">Portfolio</a>
+    <a href="#owner">About Pankaj</a>
     <a href="#contact">Contact</a>
   </nav>
   <div class="header-left">
@@ -100,7 +82,7 @@ footer a{color:#fff;margin:0 10px}
     <p>Computer, Networking, CCTV, Electrical & IT Solutions Managed Professionally</p>
   </div>
   <div class="header-right">
-    <img src="pankaj.jpg.jpg" alt="Pankaj Tambe">
+    <img src="pankaj.jpg" alt="Pankaj Tambe">
     <div class="owner-name">Pankaj Tambe (Owner)</div>
   </div>
 </header>
@@ -110,68 +92,72 @@ footer a{color:#fff;margin:0 10px}
   <div class="about">
     <img src="pkn.jpg" alt="Pankaj Tambe">
     <div>
-      <p><strong>Sparsh Infotech</strong> — Professional IT and digital solutions provider based in India. Our mission is to help businesses grow through innovative technology. We offer IT solutions for small businesses, schools, banks, shops, offices, and homes, including hardware setup, networking, CCTV, and annual maintenance contracts (AMC).</p>
+      <p><strong>Sparsh Infotech</strong> — Professional IT, Security & Digital Solutions Provider. We deliver complete technology support for Home, Business, and Industry — from installation to maintenance.</p>
+      <p>Our expertise includes computer repair, networking setup, CCTV systems, data backup solutions, electrical works, and annual maintenance contracts.</p>
       <p><strong>Company Registration Number:</strong> UDYAM_MH-28-0078744</p>
     </div>
   </div>
 </section>
 
 <section id="services">
-  <h2>Our Services</h2>
+  <h2>Our Core Services</h2>
   <div class="cards">
-    <div class="card">
-      <i class="fas fa-laptop-code"></i>
-      <h3>Computer Hardware</h3>
-      <ul>
-        <li>Desktop & Laptop repair: Hard drive, RAM, motherboard, CPU, GPU upgrade/repair.</li>
-        <li>Peripheral setup: Printer, scanner, keyboard, mouse installation.</li>
-        <li>OS installation: Windows, Linux, Mac OS.</li>
-        <li>Virus removal / optimization: System clean-up, antivirus install, speed optimization.</li>
-      </ul>
+    <div class="card"><i class="fas fa-laptop-code"></i><h3>Computer Hardware</h3>
+      <ul><li>Desktop & Laptop repair</li><li>Peripheral setup</li><li>OS installation</li><li>Virus removal & optimization</li></ul>
     </div>
-    <div class="card">
-      <i class="fas fa-network-wired"></i>
-      <h3>Networking</h3>
-      <ul>
-        <li>LAN/WAN setup: Router, switch, hub connection.</li>
-        <li>Cabling: CAT5/CAT6 cables, fiber optics.</li>
-        <li>IP configuration: Static & dynamic IP setup, troubleshooting.</li>
-        <li>Wi-Fi setup: Secure wireless networks, extenders installation.</li>
-      </ul>
+    <div class="card"><i class="fas fa-network-wired"></i><h3>Networking</h3>
+      <ul><li>LAN/WAN setup</li><li>Cabling & IP configuration</li><li>Wi-Fi setup</li><li>Server installation</li></ul>
     </div>
-    <div class="card">
-      <i class="fas fa-video"></i>
-      <h3>CCTV Installation</h3>
-      <ul>
-        <li>Camera mounting: Indoor/outdoor cameras.</li>
-        <li>Wiring & power supply: Proper wiring setup for cameras.</li>
-        <li>DVR/NVR configuration: Recording device install & configuration.</li>
-        <li>Remote monitoring: Mobile app/PC live feed setup.</li>
-      </ul>
+    <div class="card"><i class="fas fa-video"></i><h3>CCTV Installation</h3>
+      <ul><li>Indoor/Outdoor cameras</li><li>DVR/NVR setup</li><li>Remote monitoring</li><li>Maintenance contracts</li></ul>
     </div>
-    <div class="card">
-      <i class="fas fa-bolt"></i>
-      <h3>Electrical Work</h3>
+    <div class="card"><i class="fas fa-bolt"></i><h3>Electrical Work</h3>
+      <ul><li>Wiring & load balancing</li><li>Appliance connection</li><li>UPS backup systems</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="backup">
+  <h2>Data Backup & Recovery</h2>
+  <div class="about">
+    <img src="backup.jpg" alt="Data Recovery">
+    <div>
+      <p>We offer reliable <strong>HDD & SSD data recovery</strong> for crashed drives, accidental deletion, and corrupted partitions.</p>
       <ul>
-        <li>Wiring: Switch, socket, fan, tube light wiring.</li>
-        <li>Appliance connection: AC, geyser, motor, pump.</li>
-        <li>Maintenance: Fuse, MCB replacement, short-circuit fixing.</li>
-        <li>Backup system: UPS, stabilizer installation & maintenance.</li>
+        <li>Full system backup and restore.</li>
+        <li>Cloud-based secure storage.</li>
+        <li>RAID recovery & migration.</li>
+        <li>Business data disaster protection.</li>
       </ul>
     </div>
   </div>
 </section>
 
 <section id="portfolio">
-  <h2>Portfolio — Our Work</h2>
+  <h2>Our Work — Projects & Setup</h2>
   <div class="portfolio-slider">
     <div class="slides">
-      <img src="poster.jpg" alt="Project 1">
-      <img src="https://via.placeholder.com/1200x500/333333/FFD700?text=Project+2" alt="Project 2">
-      <img src="https://via.placeholder.com/1200x500/444444/FFD700?text=Project+3" alt="Project 3">
+      <img src="cctv1.jpg" alt="CCTV Installation">
+      <img src="network1.jpg" alt="Networking Setup">
+      <img src="backup1.jpg" alt="Data Backup System">
     </div>
     <button class="prev-slide">&#10094;</button>
     <button class="next-slide">&#10095;</button>
+  </div>
+</section>
+
+<section id="owner">
+  <h2>About Pankaj Tambe</h2>
+  <div class="about">
+    <img src="pankaj2.jpg" alt="Pankaj Tambe">
+    <div>
+      <p><strong>Pankaj Tambe</strong> — Founder of Sparsh Infotech, Network Engineer, and Professional Cricketer. Known for his precision in technology and passion for innovation.</p>
+      <p><strong>Family:</strong><br>
+      Father: Dattaram Ganpat Tambe (Retired Government Employee)<br>
+      Mother: Mayuri Dattaram Tambe (Housewife)<br>
+      Sister: Smita Tambe Khamgoankar</p>
+      <p>“Technology is not just work — it’s art with logic.”</p>
+    </div>
   </div>
 </section>
 
@@ -181,20 +167,20 @@ footer a{color:#fff;margin:0 10px}
     <div class="contact-card">
       <div class="big">Pankaj Tambe (Owner)</div>
       <div class="contact-list">
-        <div>Phone: <a href="tel:+91-9527023124">+91-9527023124</a></div>
-        <div>Email: <a href="mailto:contact@sparshinfotech.com">contact@sparshinfotech.com</a></div>
-        <div>Address: Available on request</div>
+        <div>📞 <a href="tel:+91-9527023124">+91-9527023124</a></div>
+        <div>✉️ <a href="mailto:contact@sparshinfotech.com">contact@sparshinfotech.com</a></div>
+        <div>📍 Address: Available on request</div>
       </div>
-      <p style="margin-top:12px;color:#555">Call or WhatsApp us — we provide solutions tailored to your needs and budget.</p>
+      <p style="margin-top:12px;color:#555">Call or WhatsApp — we provide complete IT & Security Solutions.</p>
     </div>
     <div class="contact-card">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeHFWAI8e4xrSKHfBqgZu3oSpYVaGjHW3iyYYEncDWLozwVxQ/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeHFWAI8e4xrSKHfBqgZu3oSpYVaGjHW3iyYYEncDWLozwVxQ/viewform?embedded=true" width="100%" height="1000" frameborder="0">Loading…</iframe>
     </div>
   </div>
 </section>
 
 <footer>
-  &copy; 2025 Sparsh Infotech | <strong>Pankaj Tambe</strong><br>
+  &copy; 2025 <strong>Sparsh Infotech</strong> | Designed by <strong>Pankaj Tambe</strong><br>
   Company Registration: UDYAM_MH-28-0078744
   <div style="margin-top:12px">Follow us: 
     <a href="#"><i class="fab fa-facebook"></i></a> 
@@ -210,23 +196,26 @@ footer a{color:#fff;margin:0 10px}
 const sections=document.querySelectorAll('section');
 window.addEventListener('scroll',()=>{const trigger=window.scrollY+window.innerHeight-100;sections.forEach(sec=>{if(trigger>sec.offsetTop)sec.classList.add('fade-in');});});
 // Back to top
-const backBtn=document.getElementById('backToTop');window.addEventListener('scroll',()=>{ backBtn.style.display=window.scrollY>300?'block':'none'; });backBtn.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
-// Hero particles
-const canvas = document.getElementById('heroCanvas');const ctx = canvas.getContext('2d');function setSize(){canvas.width = window.innerWidth; canvas.height = window.innerHeight;}setSize();window.addEventListener('resize',setSize);
-let particles=[];const colors=['#FFD700','#FFC107','#FFE066'];class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.r=Math.random()*2+0.5;this.vx=(Math.random()-0.5)*0.6;this.vy=(Math.random()-0.5)*0.6;this.c=colors[Math.floor(Math.random()*colors.length)];}update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1;}draw(){ctx.fillStyle=this.c;ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();}}
-function init(){particles=[];for(let i=0;i<60;i++)particles.push(new Particle());}
-function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(anim);}init();anim();
-
-// Portfolio slider
-const portfolioSlides = document.querySelector('.slides');
-const portfolioImages = document.querySelectorAll('.slides img');
-let slideIndex = 0;
-const totalSlides = portfolioImages.length;
-function showPortfolioSlide(){ portfolioSlides.style.transform = `translateX(${-slideIndex * 100}%)`; }
-let portfolioTimer = setInterval(()=>{slideIndex=(slideIndex+1)%totalSlides;showPortfolioSlide();},4000);
-document.querySelector('.prev-slide').addEventListener('click',()=>{slideIndex=(slideIndex-1+totalSlides)%totalSlides;showPortfolioSlide();resetPortfolioTimer();});
-document.querySelector('.next-slide').addEventListener('click',()=>{slideIndex=(slideIndex+1)%totalSlides;showPortfolioSlide();resetPortfolioTimer();});
-function resetPortfolioTimer(){clearInterval(portfolioTimer);portfolioTimer=setInterval(()=>{slideIndex=(slideIndex+1)%totalSlides;showPortfolioSlide();},4000);}
+const backBtn=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{backBtn.style.display=window.scrollY>300?'block':'none';});
+backBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+// Hero animation
+const canvas=document.getElementById('heroCanvas');const ctx=canvas.getContext('2d');
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+const colors=['#FFD700','#FFC107','#FFE066'];let particles=[];
+class Particle{constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.r=Math.random()*2+0.5;this.vx=(Math.random()-0.5)*0.6;this.vy=(Math.random()-0.5)*0.6;this.c=colors[Math.floor(Math.random()*colors.length)];}
+update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>canvas.width)this.vx*=-1;if(this.y<0||this.y>canvas.height)this.vy*=-1;}
+draw(){ctx.fillStyle=this.c;ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();}}
+for(let i=0;i<60;i++)particles.push(new Particle());
+function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
+animate();
+// Slider
+const slides=document.querySelector('.slides');const imgs=document.querySelectorAll('.slides img');let i=0;
+function show(){slides.style.transform=`translateX(${-i*100}%)`;}
+setInterval(()=>{i=(i+1)%imgs.length;show();},4000);
+document.querySelector('.prev-slide').onclick=()=>{i=(i-1+imgs.length)%imgs.length;show();};
+document.querySelector('.next-slide').onclick=()=>{i=(i+1)%imgs.length;show();};
 </script>
 
 </body>
