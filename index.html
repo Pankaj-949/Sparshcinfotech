@@ -3,151 +3,233 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sparsh Infotech – Pankaj Tambe</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<title>Sparsh Infotech — Premium 3D Gold Theme</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root{
-  --primary-dark:#111;
-  --gold:#FFD700;
-  --gold-gradient:linear-gradient(135deg,#FFD700,#FFC107);
-  --gold-light:#FFE066;
-  --white:#fff;
+  --bg:#07060a;
+  --card:#0f1720;
+  --muted:#b8c0c8;
+  --gold:#ffd166;
+  --glass:rgba(255,255,255,0.04);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Roboto',sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth;font-size:1.1rem}
-a{text-decoration:none;color:inherit;transition:0.3s}h1,h2,h3,h4,h5,h6{font-weight:700}
+html,body{font-family:Inter,sans-serif;background:linear-gradient(180deg,#040406,#0f1418);color:#e6eef6;scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:20px auto;padding:16px}
 
 /* Header */
-header{position:relative;width:100%;height:95vh;overflow:hidden;background:linear-gradient(135deg,#0b0b0b,#1a1a1a);color:var(--gold);display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;}
-.header-logo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 12px 35px rgba(0,0,0,0.5);margin-bottom:20px;}
-.header-name{font-size:3.5rem;font-weight:900;color:var(--gold);margin-bottom:12px;letter-spacing:2px;}
-.header-title{font-size:1.6rem;color:#fff;opacity:0.95;margin-bottom:20px;line-height:1.6;}
-.header-photo{width:220px;height:220px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 12px 35px rgba(0,0,0,0.5);margin-bottom:15px;}
+header{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:12px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:96px;height:96px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#131419,#0d0f12);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,209,102,0.12);box-shadow:0 20px 60px rgba(0,0,0,0.7)}
+.logo img{width:92%;height:92%;object-fit:cover}
+.brand-text h1{color:var(--gold);font-size:1.6rem;letter-spacing:0.6px}
+.brand-text p{color:var(--muted);font-size:0.95rem}
+.nav{display:flex;gap:10px}
+.nav a{padding:8px 12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02);font-weight:600;color:var(--muted)}
+
+/* Hero */
+.hero{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px}
+.hero .card{flex:1;min-width:280px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);border-radius:14px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+.hero h2{color:var(--gold);font-size:1.4rem;margin-bottom:6px}
+.hero p{color:var(--muted);line-height:1.6}
+.quick{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.quick .box{flex:1;background:var(--card);padding:10px;border-radius:10px;text-align:center}
+.quick h4{color:var(--gold);margin-bottom:6px}
+
+/* Profile */
+.profile{border-radius:12px;overflow:hidden;border:2px solid rgba(255,209,102,0.06);margin-top:12px}
+.profile img{width:100%;height:320px;object-fit:cover}
+.owner{text-align:center;margin-top:10px}
+.owner h3{color:var(--gold)}
+.owner p{color:var(--muted)}
 
 /* Sections */
-section{padding:120px 20px;max-width:1200px;margin:auto;opacity:0;transform:translateY(40px);transition:1s ease}
-section.fade-in{opacity:1;transform:translateY(0)}
-section h2{text-align:center;font-size:2.8rem;margin-bottom:40px;color:var(--primary-dark);position:relative}
-section h2::after{content:"";display:block;width:80px;height:4px;background:var(--gold-gradient);margin:20px auto 0;border-radius:2}
+.section{margin-top:30px}
+.section h3{color:var(--gold);margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 
-/* About */
-.about{display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px}
-.about img{width:100%;max-width:450px;border-radius:16px;box-shadow:0 14px 50px rgba(0,0,0,0.2)}
-.about div{flex:1}
-.about p{font-size:1.1rem;line-height:1.8;color:#444;margin-bottom:14px}
-.info-card{background:#fff;border-radius:16px;padding:25px;box-shadow:0 12px 35px rgba(0,0,0,0.1);margin-bottom:25px;transition:transform 0.5s ease;}
-.info-card:hover{transform:scale(1.02);}
-.info-card h3{color:var(--gold);margin-bottom:10px;font-size:1.6rem;}
-.info-card p{color:#555;line-height:1.7;font-size:1.05rem;}
+/* 3D cards */
+.card3d{perspective:1100px}
+.card3d .inner{background:linear-gradient(180deg,#0e1419,#0b0e12);border-radius:12px;padding:14px;min-height:150px;transition:transform .45s cubic-bezier(.2,.9,.2,1);transform-style:preserve-3d;border:1px solid rgba(255,255,255,0.03);box-shadow:0 18px 50px rgba(0,0,0,0.7)}
+.card3d:hover .inner{transform:rotateY(12deg) translateY(-8px) translateZ(6px)}
+.inner .icon{font-size:26px;color:var(--gold);margin-bottom:10px}
+.inner p{color:var(--muted);line-height:1.6}
 
-/* Services */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
-.card{background:#fff;border-radius:16px;padding:25px;text-align:left;box-shadow:0 14px 40px rgba(0,0,0,0.1);transition: transform 0.5s ease, box-shadow 0.5s ease;transform-style: preserve-3d;}
-.card:hover{transform: rotateY(12deg) scale(1.08);box-shadow:0 16px 50px rgba(0,0,0,0.25);}
-.card i{font-size:3rem;margin-bottom:14px;color:#FFD700;transition: transform 0.3s ease;}
-.card i:hover{transform: rotate(15deg) scale(1.2);}
-.card h3{margin-bottom:14px;color:#111;}
-.card ul{list-style: disc inside; color:#555; line-height:1.7;}
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,0.03);box-shadow:0 18px 40px rgba(0,0,0,0.7);cursor:pointer;transition:transform .35s}
+.gallery img:hover{transform:translateY(-6px) scale(1.03)}
 
-/* Portfolio */
-.portfolio-slider{position:relative;overflow:hidden;border-radius:16px;box-shadow:0 14px 45px rgba(0,0,0,0.15);margin-top:40px}
-.slides{display:flex;transition:transform 0.7s ease-in-out}
-.slides img{width:100%;border-radius:16px;transition:transform 0.5s ease, box-shadow 0.5s ease;}
-.slides img:hover{transform: scale(1.05);box-shadow:0 14px 45px rgba(0,0,0,0.35);}
-.prev-slide,.next-slide{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:#FFD700;border:none;font-size:2rem;padding:8px 14px;cursor:pointer;border-radius:6px;z-index:5;transition:background 0.3s ease;}
-.prev-slide:hover,.next-slide:hover{background:rgba(0,0,0,0.7);}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999}
+.lightbox img{max-width:92%;max-height:88%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,0.8)}
+.lightbox .close{position:absolute;top:22px;right:28px;font-size:28px;color:var(--gold);cursor:pointer}
 
 /* Contact */
-.contact-grid{display:flex;flex-wrap:wrap;gap:35px;align-items:flex-start}
-.contact-card{flex:1;min-width:320px;background:linear-gradient(180deg,#fff,#fff);padding:25px;border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,0.1);transition: transform 0.5s ease;}
-.contact-card:hover{transform: scale(1.03);}
-.contact-card .big{font-size:1.4rem;font-weight:700;color:var(--primary-dark)}
-.contact-list{margin-top:14px;color:#555;line-height:1.8}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e9f0f7}
+textarea{min-height:120px;resize:vertical}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#ffd166,#ffb366);color:#08101a;font-weight:800;border:none;cursor:pointer}
+.muted{color:var(--muted);font-size:0.9rem}
 
-/* Footer */
-footer{background:#111;color:#fff;text-align:center;padding:50px 20px}
-footer a{color:#fff;margin:0 12px}
+.footer{margin-top:30px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 
-/* Back to top */
-#backToTop{position:fixed;bottom:30px;right:30px;background:var(--gold-gradient);color:#111;border:none;padding:14px 18px;border-radius:50px;cursor:pointer;display:none;box-shadow:0 10px 35px rgba(0,0,0,0.35);z-index:1000;transition:transform 0.3s ease;}
-#backToTop:hover{transform: scale(1.1);}
-
-@media(max-width:768px){header{height:auto;padding:25px}.about{flex-direction:column;align-items:center}.cards{grid-template-columns:1fr}}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)} .gallery{grid-template-columns:repeat(2,1fr)} .hero{flex-direction:column}}
+@media(max-width:600px){.grid{grid-template-columns:1fr} .gallery{grid-template-columns:1fr} .form-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div class="wrap">
 
+<!-- Header / Hero -->
 <header>
-  <img src="sp.jpg" alt="Sparsh Infotech Logo" class="header-logo">
-  <h1 class="header-name">SPARSH INFOTECH</h1>
-  <p class="header-title">Professional IT, Networking & CCTV — Premium 3D Gold Theme</p>
-  <img src="pankaj.jpg" alt="Pankaj Tambe" class="header-photo">
-  <div class="header-name">Pankaj Tambe</div>
+  <div class="brand">
+    <div class="logo"><img src="sp.jpg" alt="Sparsh Infotech"></div>
+    <div class="brand-text">
+      <h1>SPARSH INFOTECH</h1>
+      <p>Professional IT • Networking • CCTV • Backup Solutions</p>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="#intro">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section id="about">
-  <h2>About Pankaj Tambe</h2>
-  <div class="about">
-    <img src="pkn.jpg" alt="Pankaj Tambe">
-    <div>
-      <div class="info-card">
-        <h3>Biography</h3>
-        <p>Pankaj Tambe completed his schooling in Sangmeshwar village and pursued Engineering in Ratnagiri. He played Tennis Ball Cricket in Maharashtra tournaments, earning awards like Man of the Series, Best Batsman, and Best Bowler.</p>
-      </div>
-      <div class="info-card">
-        <h3>Professional Journey</h3>
-        <p>Completed Computer Engineering in Mumbai. Managed IT infrastructure & served as IT teacher at St. Teresa’s Convent Girls School. Handled IT infrastructure for TPC, AG Infra, Supreme, Inventys. Founder of Sparsh Infotech & Stuti Enterprise, providing IT, networking, hardware, and CCTV solutions with 12+ years of experience.</p>
-      </div>
-      <div class="info-card">
-        <h3>Family</h3>
-        <p>Father: Dattaram Ganpat Tambe (Retired Government Employee)<br>Mother: Mayuri Dattaram Tambe (Housewife)<br>Sister: Smita Tambe Khamgoankar</p>
-      </div>
+<section class="hero">
+  <aside class="card">
+    <div class="profile"><img src="pankaj.jpg" alt="Pankaj Tambe"></div>
+    <div class="owner">
+      <h3>Pankaj Tambe</h3>
+      <p class="muted">Network Engineer • Owner</p>
+      <p class="muted">Phone: 9527023124</p>
     </div>
+  </aside>
+  <div class="card">
+    <h2>Our Promise</h2>
+    <p class="muted">Sparsh Infotech provides complete IT & networking solutions to homes, offices, banks, and institutions. We design, implement and maintain robust computer systems, network setups, printers, CCTV cameras, and AMC services, helping users overcome any technical difficulties efficiently.</p>
   </div>
 </section>
 
-<section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="portfolio-slider">
-    <div class="slides">
-      <img src="cctv-camera-installation.jpg" alt="CCTV Camera Installation">
-      <img src="gpt.jpg" alt="GPT Setup">
-      <img src="camera.jpg" alt="Camera Setup">
-      <img src="Desktop_PC_Repair.jpg" alt="Desktop PC Repair">
-      <img src="stp.jpg" alt="STP Hardware">
-      <img src="prt.jpg" alt="Printer Setup">
-      <img src="networking.jpg" alt="Networking Setup">
-      <img src="backup1.jpg" alt="Backup Solutions">
-    </div>
-    <button class="prev-slide">&#10094;</button>
-    <button class="next-slide">&#10095;</button>
+<!-- About / Biography -->
+<section id="intro" class="section">
+  <h3>About Pankaj Tambe & Family</h3>
+  <p class="muted">Born on 9 April 1990 in Mumbai, Bandra. Completed early education in Sangmeshwar, engineering in Ratnagiri. Active in tennis, cricket and represented multiple competitions across Maharashtra (Goa, Mumbai, Mahad, Rajapur, Ratnagiri) winning trophies for Man of the Series, Best Batsman & Best Bowler.</p>
+  <p class="muted">Worked as IT Administrator & Teacher at St. Teresa's Convent Girls School, maintaining full IT infrastructure. Managed IT infrastructure for notable companies including TPC, AG Infra, Supreme & Inventys with 12+ years of professional experience in networking, CCTV, and IT management. Currently runs Sparsh Infotech & Stuti Enterprise.</p>
+  <p class="muted">Family: Father - Dattaram Ganpat Tambe (Retired Govt Employee), Mother - Mayuri Dattaram Tambe (Housewife), Sister - Smita Tambe Khamgoankar.</p>
+</section>
+
+<!-- Services -->
+<section id="services" class="section">
+  <h3>Services — What We Do</h3>
+  <div class="grid">
+    <div class="card3d"><div class="inner"><div class="icon"><i class="fas fa-network-wired"></i></div><h4>Networking</h4><p class="muted">LAN/WAN design, CAT6/STP, switches, fiber uplinks, VLANs, QoS, documentation.</p></div></div>
+    <div class="card3d"><div class="inner"><div class="icon"><i class="fas fa-video"></i></div><h4>CCTV</h4><p class="muted">IP & analog cameras, NVR sizing, remote monitoring, PTZ & storage planning.</p></div></div>
+    <div class="card3d"><div class="inner"><div class="icon"><i class="fas fa-desktop"></i></div><h4>Desktop Repair</h4><p class="muted">Diagnostics, OS install, HDD/SSD swap, RAM upgrade, component-level troubleshooting.</p></div></div>
+    <div class="card3d"><div class="inner"><div class="icon"><i class="fas fa-print"></i></div><h4>Printers & Peripherals</h4><p class="muted">Network printers, driver deployment, MFP configuration, preventive maintenance.</p></div></div>
+    <div class="card3d"><div class="inner"><div class="icon"><i class="fas fa-hdd"></i></div><h4>Data Backup</h4><p class="muted">HDD/SSD recovery, RAID rebuild, NAS & cloud backup solutions with integrity checks.</p></div></div>
+    <div class="card3d"><div class="inner"><div class="icon"><i class="fas fa-shield-alt"></i></div><h4>Security & AMC</h4><p class="muted">Firewall, VPN, patching, AMC for CCTV & networking, preventive monitoring.</p></div></div>
   </div>
 </section>
+
+<!-- Portfolio -->
+<section id="portfolio" class="section">
+  <h3>Portfolio — Click to Enlarge</h3>
+  <div class="gallery" id="gallery">
+    <img src="cctv-camera-installation.jpg" alt="CCTV Installation" data-full="cctv-camera-installation.jpg">
+    <img src="gpt.jpg" alt="GPT Project" data-full="gpt.jpg">
+    <img src="camera.jpg" alt="Camera Closeup" data-full="camera.jpg">
+    <img src="Desktop_PC_Repair.jpg" alt="Desktop Repair" data-full="Desktop_PC_Repair.jpg">
+    <img src="stp.jpg" alt="STP Cabling" data-full="stp.jpg">
+    <img src="prt.jpg" alt="Printer Setup" data-full="prt.jpg">
+    <img src="networking.jpg" alt="Networking Setup" data-full="networking.jpg">
+    <img src="backup1.jpg" alt="Backup System" data-full="backup1.jpg">
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <h3>Contact</h3>
+  <div class="card">
+    <p class="muted">You can submit requests offline; submissions are stored in your browser and can be downloaded or sent via your email client.</p>
+    <form id="contactForm">
+      <div class="form-grid">
+        <input class="input" id="name" placeholder="Full name" required>
+        <input class="input" id="phone" placeholder="Phone number" required>
+        <input class="input" id="email" type="email" placeholder="Email" required>
+        <input class="input" id="subject" placeholder="Subject">
+        <textarea id="message" placeholder="Message / details" required></textarea>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button type="submit" class="btn">Submit</button>
+        <button type="button" id="downloadBtn" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">Download Saved</button>
+        <div class="muted">Fallback email: <strong>pankajtambe1221@gmail.com</strong></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="muted">© 2025 Sparsh Infotech • Pankaj Tambe • UDYAM_MH-28-0078744</div>
+  <div class="muted">Place images in the same folder as this HTML file for the gallery to display.</div>
+</footer>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close" id="lbClose">?</span>
+  <img id="lbImg" src="" alt="expanded">
+</div>
 
 <script>
-// Scroll animations
-const sections=document.querySelectorAll('section');
-window.addEventListener('scroll',()=>{
-  const trigger=window.scrollY+window.innerHeight-100;
-  sections.forEach(sec=>{if(trigger>sec.offsetTop)sec.classList.add('fade-in');});
+// Lightbox
+const galleryImgs = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbClose = document.getElementById('lbClose');
+galleryImgs.forEach(img => {
+  img.addEventListener('click', ()=>{ lbImg.src = img.dataset.full||img.src; lightbox.style.display='flex'; });
 });
-// Back to top
-const backBtn=document.getElementById('backToTop');
-window.addEventListener('scroll',()=>{ backBtn.style.display=window.scrollY>300?'block':'none'; });
-backBtn.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+lbClose.addEventListener('click', ()=> lightbox.style.display='none');
+lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.style.display='none'; });
 
-// Portfolio slider
-const portfolioSlides = document.querySelector('.slides');
-const portfolioImages = document.querySelectorAll('.slides img');
-let slideIndex = 0;
-const totalSlides = portfolioImages.length;
-function showPortfolioSlide(){ portfolioSlides.style.transform = `translateX(${-slideIndex * 100}%)`; }
-let portfolioTimer = setInterval(()=>{slideIndex=(slideIndex+1)%totalSlides;showPortfolioSlide();},4000);
-document.querySelector('.prev-slide').addEventListener('click',()=>{slideIndex=(slideIndex-1+totalSlides)%totalSlides;showPortfolioSlide();resetPortfolioTimer();});
-document.querySelector('.next-slide').addEventListener('click',()=>{slideIndex=(slideIndex+1)%totalSlides;showPortfolioSlide();resetPortfolioTimer();});
-function resetPortfolioTimer(){clearInterval(portfolioTimer);portfolioTimer=setInterval(()=>{slideIndex=(slideIndex+1)%totalSlides;showPortfolioSlide();},4000);}
+// Offline contact form
+const form = document.getElementById('contactForm');
+const STORAGE_KEY = 'sparsh_submissions_v1';
+function loadSaved(){ const raw=localStorage.getItem(STORAGE_KEY); try{return raw?JSON.parse(raw):[];}catch(e){return [];} }
+function saveEntry(entry){ const arr=loadSaved(); arr.push(entry); localStorage.setItem(STORAGE_KEY,JSON.stringify(arr)); }
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const entry = {
+    name: document.getElementById('name').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    subject: document.getElementById('subject').value.trim(),
+    message: document.getElementById('message').value.trim(),
+    date: new Date().toISOString()
+  };
+  saveEntry(entry);
+  const to = 'pankajtambe1221@gmail.com';
+  const subject = encodeURIComponent(entry.subject || 'Website enquiry from '+entry.name);
+  const body = encodeURIComponent('Name: '+entry.name+"\nPhone: "+entry.phone+"\nEmail: "+entry.email+"\nDate: "+entry.date+"\n\nMessage:\n"+entry.message);
+  const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+  window.location.href = mailto;
+  alert('Saved locally. Your email client should open to send a copy to '+to+' (if available).');
+  form.reset();
+});
+
+document.getElementById('downloadBtn').addEventListener('click', ()=>{
+  const data = loadSaved();
+  if(!data.length){ alert('No saved submissions found.'); return; }
+  const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download='sparsh_submissions.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+});
 </script>
-
 </body>
 </html>
