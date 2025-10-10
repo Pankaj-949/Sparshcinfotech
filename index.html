@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sparsh Infotech — 3D Gold Theme (Updated)</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root{--bg:#0b0b0f;--card:#0f1720;--muted:#b8c0c8;--gold:#ffd166;--glass:rgba(255,255,255,0.04);}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#05060a 0%, #0f1418 100%);color:#e6eef6}
-a{color:inherit}
-.container{max-width:1200px;margin:26px auto;padding:22px}
-.header{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:18px}
-.logo{width:92px;height:92px;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.6);border:2px solid rgba(255,209,102,0.12);background:linear-gradient(135deg,#1b1f2a,#0f1116)}
-.logo img{width:100%;height:100%;object-fit:cover}
-.title{line-height:1}
-.title h1{font-size:1.6rem;letter-spacing:0.6px;color:var(--gold)}
-.title p{font-size:0.9rem;color:var(--muted)}
-.nav{display:flex;gap:12px}
-.nav a{padding:8px 12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02);font-weight:600;color:var(--muted)}
-.hero{margin-top:20px;display:grid;grid-template-columns:1fr 380px;gap:20px}
-.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);border-radius:14px;padding:18px;backdrop-filter:blur(6px);box-shadow:0 30px 60px rgba(0,0,0,0.6)}
-.hero-left h2{font-size:1.4rem;color:var(--gold);margin-bottom:8px}
-.hero-left p{color:var(--muted);line-height:1.6}
-.callouts{display:flex;gap:10px;margin-top:14px}
-.callout{flex:1;background:var(--card);padding:10px;border-radius:10px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
-.callout h3{font-size:1rem;color:var(--gold)}
-.callout p{font-size:0.85rem;color:var(--muted)}
-.hero-right{display:flex;flex-direction:column;gap:12px;align-items:center}
-.profile{width:100%;border-radius:12px;overflow:hidden;border:2px solid rgba(255,209,102,0.08)}
-.profile img{width:100%;height:300px;object-fit:cover}
-.owner{margin-top:10px;text-align:center}
-.owner h3{color:var(--gold)}
-.owner p{color:var(--muted);font-size:0.9rem}
-.section{margin-top:26px}
-.section h2{font-size:1.15rem;color:var(--gold);margin-bottom:12px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card3d{perspective:1100px}
-.card-inner{background:linear-gradient(180deg,#0e1419,#0b0e12);border-radius:12px;padding:16px;min-height:150px;transition:transform .45s cubic-bezier(.2,.9,.2,1);transform-style:preserve-3d;border:1px solid rgba(255,255,255,0.03);box-shadow:0 18px 50px rgba(0,0,0,0.7)}
-.card3d:hover .card-inner{transform:rotateY(12deg) translateY(-8px) translateZ(6px)}
-.card3d .icon{font-size:26px;color:var(--gold);margin-bottom:10px}
-.card3d h3{color:#fff;margin-bottom:8px}
-.card3d p{color:var(--muted);font-size:0.92rem;line-height:1.5}
-.long{grid-column:span 3;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
-.gallery img{width:100%;height:130px;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,0.03);box-shadow:0 18px 40px rgba(0,0,0,0.7);cursor:pointer;transition:transform .35s}
-.gallery img:hover{transform:translateY(-6px) scale(1.03)}
-/* Lightbox */
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999}
-.lightbox img{max-width:92%;max-height:88%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,0.8)}
-.lightbox .close{position:absolute;top:22px;right:28px;font-size:28px;color:var(--gold);cursor:pointer}
-/* Contact form */
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e9f0f7}
-textarea{min-height:120px;resize:vertical}
-.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#ffd166,#ffb366);color:#08101a;font-weight:800;border:none;cursor:pointer}
-.small{font-size:0.86rem;color:var(--muted);margin-top:8px}
-.footer{margin-top:20px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);display:flex;justify-content:space-between;align-items:center}
-.footer p{color:var(--muted)}
-@media(max-width:1000px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)} .gallery{grid-template-columns:repeat(2,1fr)} .container{padding:14px}}
-@media(max-width:600px){.grid{grid-template-columns:1fr} .gallery{grid-template-columns:1fr} .form-grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sparsh Infotech — Premium 3D Gold Theme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--bg:#07060a;--card:#0f1720;--muted:#b8c0c8;--gold:#ffd166;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#040406 0%, #0f1418 100%);color:#e6eef6}
+    a{color:inherit}
+    .wrap{max-width:1200px;margin:24px auto;padding:18px}
+
+    /* Header */
+    .top{display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:96px;height:96px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#131419,#0d0f12);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,209,102,0.12);box-shadow:0 20px 60px rgba(0,0,0,0.7)}
+    .logo img{width:92%;height:92%;object-fit:cover}
+    .brand-text h1{color:var(--gold);font-size:1.4rem;letter-spacing:0.6px}
+    .brand-text p{color:var(--muted);font-size:0.9rem}
+    .nav{display:flex;gap:10px}
+    .nav a{padding:8px 12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02);font-weight:600;color:var(--muted)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);border-radius:14px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+    .hero h2{color:var(--gold);font-size:1.4rem;margin-bottom:6px}
+    .hero p{color:var(--muted);line-height:1.6}
+    .quick{display:flex;gap:10px;margin-top:12px}
+    .quick .box{flex:1;background:var(--card);padding:10px;border-radius:10px;text-align:center}
+    .quick h4{color:var(--gold);margin-bottom:6px}
+    .profile{border-radius:12px;overflow:hidden;border:2px solid rgba(255,209,102,0.06)}
+    .profile img{width:100%;height:300px;object-fit:cover}
+    .owner{margin-top:10px;text-align:center}
+    .owner h3{color:var(--gold)}
+    .owner p{color:var(--muted)}
+
+    /* Sections */
+    .section{margin-top:20px}
+    .section h3{color:var(--gold);margin-bottom:10px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+    /* 3D cards */
+    .card3d{perspective:1100px}
+    .card3d .inner{background:linear-gradient(180deg,#0e1419,#0b0e12);border-radius:12px;padding:14px;min-height:150px;transition:transform .45s cubic-bezier(.2,.9,.2,1);transform-style:preserve-3d;border:1px solid rgba(255,255,255,0.03);box-shadow:0 18px 50px rgba(0,0,0,0.7)}
+    .card3d:hover .inner{transform:rotateY(12deg) translateY(-8px) translateZ(6px)}
+    .inner .icon{font-size:26px;color:var(--gold);margin-bottom:10px}
+    .inner p{color:var(--muted);line-height:1.6}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,0.03);box-shadow:0 18px 40px rgba(0,0,0,0.7);cursor:pointer;transition:transform .35s}
+    .gallery img:hover{transform:translateY(-6px) scale(1.03)}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999}
+    .lightbox img{max-width:92%;max-height:88%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,0.8)}
+    .lightbox .close{position:absolute;top:22px;right:28px;font-size:28px;color:var(--gold);cursor:pointer}
+
+    /* Contact */
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e9f0f7}
+    textarea{min-height:120px;resize:vertical}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#ffd166,#ffb366);color:#08101a;font-weight:800;border:none;cursor:pointer}
+    .muted{color:var(--muted);font-size:0.9rem}
+
+    .footer{margin-top:20px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);display:flex;justify-content:space-between;align-items:center}
+
+    @media(max-width:1000px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)} .gallery{grid-template-columns:repeat(2,1fr)} .wrap{padding:12px}}
+    @media(max-width:600px){.grid{grid-template-columns:1fr} .gallery{grid-template-columns:1fr} .form-grid{grid-template-columns:1fr}}
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <header class="header">
+  <div class="wrap">
+
+    <!-- Header -->
+    <header class="top">
       <div class="brand">
-        <div class="logo"><img src="sp.jpg" alt="Sparsh Infotech Logo"></div>
-        <div class="title">
-          <h1>Sparsh Infotech</h1>
-          <p>IT • Networking • CCTV • Backup Solutions</p>
+        <div class="logo"><img src="sp.jpg" alt="Sparsh Infotech"></div>
+        <div class="brand-text">
+          <h1>SPARSH INFOTECH</h1>
+          <p>Professional IT • Networking • CCTV • Backup Solutions</p>
         </div>
       </div>
+
       <nav class="nav">
         <a href="#services">Services</a>
         <a href="#hardware">Hardware</a>
@@ -82,134 +94,150 @@ textarea{min-height:120px;resize:vertical}
       </nav>
     </header>
 
-    <main class="hero">
-      <div class="hero-card hero-left">
-        <h2>Professional IT, Networking & CCTV — Premium 3D Gold Theme</h2>
-        <p>Place the images in the same folder as this HTML: <strong>cctv-camera-installation.jpg, gpt.jpg, camera.jpg, Desktop_PC_Repair.jpg, stp.jpg, prt.jpg, networking.jpg, sp.jpg, pankaj.jpg, backup1.jpg</strong>. The gallery & portfolio will display them automatically.</p>
-        <div class="callouts">
-          <div class="callout"><h3>Networking</h3><p>LAN/WAN, Routers, Managed Switches, PoE & Fiber</p></div>
-          <div class="callout"><h3>CCTV</h3><p>IP/Analog, NVR/DVR, Remote Monitoring</p></div>
-          <div class="callout"><h3>Backup</h3><p>HDD/SSD recovery, NAS & Cloud sync</p></div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="card">
+        <h2>Professional IT, Networking & CCTV</h2>
+        <p class="muted">We design, install and maintain robust IT & security systems for homes and businesses. Browse services below and view our recent projects in the gallery.</p>
+
+        <div class="quick">
+          <div class="box">
+            <h4>Networking</h4>
+            <p class="muted">Structured cabling, PoE, switches, routers, fiber backbone, VLANs.</p>
+          </div>
+          <div class="box">
+            <h4>CCTV</h4>
+            <p class="muted">IP cameras, NVR/DVR, remote monitoring, motion recording.</p>
+          </div>
+          <div class="box">
+            <h4>Backup</h4>
+            <p class="muted">HDD/SSD data recovery, NAS backups, cloud sync strategies.</p>
+          </div>
         </div>
       </div>
 
-      <aside class="hero-card hero-right">
-        <div class="profile"><img src="pankaj.jpg.jpg" alt="Pankaj Tambe"></div>
+      <aside class="card">
+        <div class="profile"><img src="pankaj.jpg" alt="Pankaj Tambe"></div>
         <div class="owner">
           <h3>Pankaj Tambe</h3>
-          <p>Network Engineer • Pro Cricket Player • Owner</p>
+          <p class="muted">Network Engineer • Owner</p>
         </div>
       </aside>
-    </main>
+    </section>
 
+    <!-- Services -->
     <section id="services" class="section">
-      <h2>Services — Detailed</h2>
+      <h3>Services — What we do</h3>
       <div class="grid">
         <div class="card3d">
-          <div class="card-inner">
+          <div class="inner">
             <div class="icon"><i class="fas fa-network-wired"></i></div>
-            <h3>Networking — Design & Implementation</h3>
-            <p>Structured cabling (CAT5e/CAT6/CAT6A), STP for noisy environments, fiber backbone, VLAN segmentation, managed switches, PoE for cameras, QoS for VoIP, and network documentation with diagrams and labeling.</p>
+            <h4>Networking</h4>
+            <p class="muted">Design & implement LAN/WAN with CAT6/STP, switches (managed & PoE), fiber uplinks, VLANs, QoS and documentation.</p>
           </div>
         </div>
 
         <div class="card3d">
-          <div class="card-inner">
+          <div class="inner">
             <div class="icon"><i class="fas fa-video"></i></div>
-            <h3>CCTV — Surveillance Systems</h3>
-            <p>System planning (coverage, blind spots), camera selection (IP vs Analog), PoE cameras, NVR sizing, continuous vs motion recording, remote access setup and periodic maintenance and storage management.</p>
+            <h4>CCTV</h4>
+            <p class="muted">IP & Analog systems, camera placement, NVR sizing, remote access, PTZ and storage planning.</p>
           </div>
         </div>
 
         <div class="card3d">
-          <div class="card-inner">
+          <div class="inner">
             <div class="icon"><i class="fas fa-desktop"></i></div>
-            <h3>Desktop / Laptop Repair</h3>
-            <p>Diagnostics, OS install, driver configuration, hardware replacements (HDD/SSD, RAM, motherboards), thermal management, and on-site quick fixes to minimize downtime.</p>
+            <h4>Desktop Repair</h4>
+            <p class="muted">Full diagnostics, OS install, HDD/SSD swap, RAM upgrades, component level troubleshooting.</p>
           </div>
         </div>
 
         <div class="card3d">
-          <div class="card-inner">
+          <div class="inner">
             <div class="icon"><i class="fas fa-print"></i></div>
-            <h3>Printers & Peripherals</h3>
-            <p>Network printer configuration, shared MFP setup, driver deployment, firmware updates, toner/cartridge replacement and advice on lease vs buy for offices.</p>
+            <h4>Printers & Peripherals</h4>
+            <p class="muted">Network printers, driver deployment, MFP configuration and preventive maintenance.</p>
           </div>
         </div>
 
         <div class="card3d">
-          <div class="card-inner">
+          <div class="inner">
             <div class="icon"><i class="fas fa-hdd"></i></div>
-            <h3>Data Backup & Recovery</h3>
-            <p>HDD & SSD recovery (logical), RAID rebuild assistance, NAS backups, snapshot strategies, encrypted cloud backups and periodic verification of backup integrity.</p>
+            <h4>Data Backup</h4>
+            <p class="muted">HDD/SSD recovery, RAID rebuild consultation, NAS & cloud backup solutions with integrity checks.</p>
           </div>
         </div>
 
         <div class="card3d">
-          <div class="card-inner">
+          <div class="inner">
             <div class="icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>Security & Maintenance</h3>
-            <p>Firewall & VPN, VLAN isolation, patch management, AMCs for CCTV and networking, monitoring alerts and preventive health checks for critical systems.</p>
+            <h4>Security & AMC</h4>
+            <p class="muted">Firewall, VPN, patching, AMCs for CCTV & networking, monitoring & preventive checks.</p>
           </div>
         </div>
 
       </div>
     </section>
 
+    <!-- Hardware notes -->
     <section id="hardware" class="section">
-      <h2>Hardware Notes & Recommendations</h2>
-      <div class="long">
-        <h3>Quick Buying Guide</h3>
-        <ul>
-          <li><strong>Routers:</strong> For small offices, get dual-band gigabit routers with hardware NAT. For larger deployments, prefer enterprise routers with proper VPN/firewall capabilities.</li>
-          <li><strong>Switches:</strong> Use Managed PoE switches for camera deployments. Check total PoE budget (watts) before deploying many cameras.</li>
-          <li><strong>Cameras:</strong> Choose resolution based on need; 2MP for general surveillance, 4MP+ for identification zones. PTZ for wide areas.</li>
-          <li><strong>Storage:</strong> Use NAS with RAID 1/5 for redundancy and keep an offsite/cloud copy for disaster recovery.</li>
-          <li><strong>Cabling:</strong> Prefer CAT6A for future-proofing; use STP where heavy EMI exists.</li>
+      <h3>Hardware Notes & Tips</h3>
+      <div class="card">
+        <ul class="muted">
+          <li><strong>Routers:</strong> Select by throughput & features — vpn/firewall, gigabit ports for office use.</li>
+          <li><strong>Switches:</strong> Managed PoE switches are ideal for camera deployments; verify PoE watt budget.</li>
+          <li><strong>Cameras:</strong> 2MP for general, 4MP+ for ID zones; use PTZ where wide area coverage is needed.</li>
+          <li><strong>Storage:</strong> NAS with RAID for local backups + periodic cloud sync for disaster recovery.</li>
+          <li><strong>Cabling:</strong> CAT6A recommended for future-proofing; STP where EMI/noise present.</li>
         </ul>
       </div>
     </section>
 
+    <!-- Gallery -->
     <section id="portfolio" class="section">
-      <h2>Portfolio — Click to enlarge</h2>
-      <div class="gallery">
-        <img src="cctv-camera-installation.jpg" alt="cctv-camera-installation" data-full="cctv-camera-installation.jpg">
-        <img src="gpt.jpg" alt="gpt" data-full="gpt.jpg">
-        <img src="camera.jpg" alt="camera" data-full="camera.jpg">
-        <img src="Desktop_PC_Repair.jpg" alt="Desktop PC Repair" data-full="Desktop_PC_Repair.jpg">
-        <img src="stp.jpg" alt="stp cabling" data-full="stp.jpg">
-        <img src="prt.jpg" alt="printer setup" data-full="prt.jpg">
-        <img src="networking.jpg" alt="networking setup" data-full="networking.jpg">
-        <img src="backup1.jpg" alt="backup system" data-full="backup1.jpg">
+      <h3>Portfolio — Click to Enlarge</h3>
+      <div class="gallery" id="gallery">
+        <img src="cctv-camera-installation.jpg" alt="CCTV Installation" data-full="cctv-camera-installation.jpg">
+        <img src="gpt.jpg" alt="GPT Project" data-full="gpt.jpg">
+        <img src="camera.jpg" alt="Camera Closeup" data-full="camera.jpg">
+        <img src="Desktop_PC_Repair.jpg" alt="Desktop Repair" data-full="Desktop_PC_Repair.jpg">
+        <img src="stp.jpg" alt="STP Cabling" data-full="stp.jpg">
+        <img src="prt.jpg" alt="Printer Setup" data-full="prt.jpg">
+        <img src="networking.jpg" alt="Networking Setup" data-full="networking.jpg">
+        <img src="backup1.jpg" alt="Backup System" data-full="backup1.jpg">
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="section">
-      <h2>Contact — Offline-friendly Form</h2>
-      <div class="long">
-        <p>Fill this form. If you are offline, the submission will save locally and you can download saved entries later. If you want automatic email delivery, set up <strong>EmailJS</strong> and paste your <em>service ID / template ID / public key</em> in the script below (see comments).</p>
+      <h3>Contact — Offline-friendly Form</h3>
+      <div class="card">
+        <p class="muted">Submissions are saved locally (in your browser) so users can complete the form offline. You can download saved entries anytime. For automatic email delivery, enable EmailJS keys in the script (optional).</p>
 
         <form id="contactForm">
           <div class="form-grid">
-            <input class="input" type="text" id="name" placeholder="Full name" required>
-            <input class="input" type="text" id="phone" placeholder="Phone number" required>
-            <input class="input" type="email" id="email" placeholder="Email" required>
-            <input class="input" type="text" id="subject" placeholder="Subject">
+            <input class="input" id="name" placeholder="Full name" required>
+            <input class="input" id="phone" placeholder="Phone number" required>
+            <input class="input" id="email" type="email" placeholder="Email" required>
+            <input class="input" id="subject" placeholder="Subject">
             <textarea id="message" placeholder="Message / details" required></textarea>
           </div>
-          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+
+          <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
             <button type="submit" class="btn">Submit</button>
             <button type="button" id="downloadBtn" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)">Download Saved</button>
-            <div class="small">Submissions will also open your email client as a fallback to send to: <strong>pankajtambe1221@gmail.com</strong></div>
+            <div class="muted">Fallback email (mailto): <strong>pankajtambe1221@gmail.com</strong></div>
           </div>
         </form>
       </div>
     </section>
 
     <footer class="footer">
-      <p>© 2025 Sparsh Infotech — Pankaj Tambe • UDYAM_MH-28-0078744</p>
-      <p>Place images next to this file to display the gallery.</p>
+      <div class="muted">© 2025 Sparsh Infotech • Pankaj Tambe • UDYAM_MH-28-0078744</div>
+      <div class="muted">Place images in the same folder as this HTML file for the gallery to display.</div>
     </footer>
+
   </div>
 
   <!-- Lightbox element -->
@@ -218,98 +246,82 @@ textarea{min-height:120px;resize:vertical}
     <img id="lbImg" src="" alt="expanded">
   </div>
 
-<script>
-// Lightbox functionality
-const galleryImgs = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-const lbClose = document.getElementById('lbClose');
+  <script>
+    // Lightbox
+    const galleryImgs = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbClose = document.getElementById('lbClose');
 
-galleryImgs.forEach(img => {
-  img.addEventListener('click', ()=>{
-    const full = img.dataset.full || img.src;
-    lbImg.src = full;
-    lightbox.style.display = 'flex';
-  });
-});
-lbClose.addEventListener('click', ()=> lightbox.style.display='none');
-lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.style.display='none'; });
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', ()=>{
+        const full = img.dataset.full || img.src;
+        lbImg.src = full;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lbClose.addEventListener('click', ()=> lightbox.style.display='none');
+    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.style.display='none'; });
 
-// Contact form: offline-friendly + mailto fallback + optional EmailJS
-const form = document.getElementById('contactForm');
-const STORAGE_KEY = 'sparsh_submissions_v1';
+    // Offline-friendly contact form
+    const form = document.getElementById('contactForm');
+    const STORAGE_KEY = 'sparsh_submissions_v1';
 
-function loadSaved(){
-  const raw = localStorage.getItem(STORAGE_KEY);
-  try{ return raw? JSON.parse(raw):[] }catch(e){return []}
-}
-function saveEntry(entry){
-  const arr = loadSaved(); arr.push(entry); localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-}
+    function loadSaved(){
+      const raw = localStorage.getItem(STORAGE_KEY);
+      try{ return raw? JSON.parse(raw):[] }catch(e){return []}
+    }
+    function saveEntry(entry){
+      const arr = loadSaved(); arr.push(entry); localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+    }
 
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-  const entry = {
-    name: document.getElementById('name').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    subject: document.getElementById('subject').value.trim(),
-    message: document.getElementById('message').value.trim(),
-    date: new Date().toISOString()
-  };
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const entry = {
+        name: document.getElementById('name').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        subject: document.getElementById('subject').value.trim(),
+        message: document.getElementById('message').value.trim(),
+        date: new Date().toISOString()
+      };
 
-  // Save locally first
-  saveEntry(entry);
+      saveEntry(entry);
 
-  // Try EmailJS if configured (you must set your keys below)
-  const EMAILJS = {
-    enabled: false, // set true AFTER you paste your keys in the block below
-    serviceID: 'YOUR_EMAILJS_SERVICE_ID',
-    templateID: 'YOUR_EMAILJS_TEMPLATE_ID',
-    publicKey: 'YOUR_EMAILJS_PUBLIC_KEY'
-  };
+      // EmailJS (optional): configure keys to enable
+      const EMAILJS = { enabled: false, serviceID: 'YOUR_SERVICE_ID', templateID: 'YOUR_TEMPLATE_ID', publicKey: 'YOUR_PUBLIC_KEY' };
+      if(EMAILJS.enabled && window.emailjs){
+        emailjs.init(EMAILJS.publicKey);
+        emailjs.send(EMAILJS.serviceID, EMAILJS.templateID, entry)
+          .then(()=>{alert('Message sent via EmailJS and saved locally.'); form.reset();})
+          .catch(err=>{console.error(err); alert('EmailJS failed; saved locally.');});
+        return;
+      }
 
-  if(EMAILJS.enabled && window.emailjs){
-    // send via EmailJS
-    emailjs.init(EMAILJS.publicKey);
-    emailjs.send(EMAILJS.serviceID, EMAILJS.templateID, entry)
-      .then(()=>{alert('Message sent via EmailJS and saved locally.'); form.reset();})
-      .catch(err=>{console.error(err); alert('EmailJS failed; saved locally.');});
-    return;
-  }
-
-  // If online, open mail client as friendly fallback prefilled to Pankaj's email
-  const to = 'pankajtambe1221@gmail.com';
-  const subject = encodeURIComponent(entry.subject || 'Website enquiry from '+entry.name);
-  const body = encodeURIComponent('Name: '+entry.name+"
+      const to = 'pankajtambe1221@gmail.com';
+      const subject = encodeURIComponent(entry.subject || 'Website enquiry from '+entry.name);
+      const body = encodeURIComponent('Name: '+entry.name+"
 Phone: "+entry.phone+"
 Email: "+entry.email+"
 Date: "+entry.date+"
 
 Message:
 "+entry.message);
-  const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+      const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+      alert('Saved locally. Your email client should open to send a copy to '+to+' (if available).');
+      form.reset();
+    });
 
-  // Try to open mail client
-  window.location.href = mailto;
-  alert('Saved locally. Your email client should open to send a copy to '+to+' (if available).');
-  form.reset();
-});
+    // Download saved
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const data = loadSaved();
+      if(!data.length){ alert('No saved submissions found.'); return; }
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'sparsh_submissions.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
 
-// Download saved submissions
-const downloadBtn = document.getElementById('downloadBtn');
-downloadBtn.addEventListener('click', ()=>{
-  const data = loadSaved();
-  if(!data.length){ alert('No saved submissions found.'); return; }
-  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'sparsh_submissions.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-});
-
-// OPTIONAL: If user wants to enable EmailJS, include the script dynamically (user must provide keys)
-// Example usage (do NOT enable by default here):
-// const s = document.createElement('script'); s.src='https://cdn.emailjs.com/sdk/3.2.0/email.min.js'; s.onload = ()=>console.log('EmailJS loaded'); document.head.appendChild(s);
-
-</script>
+  </script>
 </body>
 </html>
