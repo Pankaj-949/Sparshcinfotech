@@ -122,38 +122,32 @@ textarea{min-height:120px;resize:vertical}
   </div>
 </section>
 
-<section id="intro" class="section">
-  <h3>About Pankaj Tambe & Family</h3>
-  <p class="muted">Born on 9 April 1990 in Mumbai, Bandra. Completed early education in Sangmeshwar, engineering in Ratnagiri. Active in tennis, cricket and represented multiple competitions across Maharashtra winning trophies.</p>
-</section>
-
 <section id="services" class="section">
 <h3>Services — What We Do</h3>
 <div class="grid">
   <div class="card3d" data-sales="15000-50000" data-amc="5000"><div class="inner"><div class="icon"><i class="fas fa-network-wired"></i></div><h4>Networking</h4><p class="muted">LAN/WAN design, CAT6/STP, switches, fiber uplinks, VLANs, QoS, documentation.</p><div class="tooltip"></div><button class="cta-btn" onclick="openContact('Networking')">Enquire</button></div></div>
   <div class="card3d" data-sales="3500" data-amc="1200"><div class="inner"><div class="icon"><i class="fas fa-video"></i></div><h4>CCTV</h4><p class="muted">IP & analog cameras, NVR sizing, remote monitoring, PTZ & storage planning.</p><div class="tooltip"></div><button class="cta-btn" onclick="openContact('CCTV')">Enquire</button></div></div>
   <div class="card3d" data-sales="800-2500" data-amc="500"><div class="inner"><div class="icon"><i class="fas fa-desktop"></i></div><h4>Desktop Repair</h4><p class="muted">Diagnostics, OS install, HDD/SSD swap, RAM upgrade, component-level troubleshooting.</p><div class="tooltip"></div><button class="cta-btn" onclick="openContact('Desktop Repair')">Enquire</button></div></div>
-</div>
-</section>
-
-<section id="portfolio" class="section">
-<h3>Portfolio — Click to Enlarge</h3>
-<div class="gallery" id="gallery">
-  <img src="cctv-camera-installation.jpg" alt="CCTV Installation" data-full="cctv-camera-installation.jpg">
-  <img src="gpt.jpg" alt="GPT Project" data-full="gpt.jpg">
+  <div class="card3d" data-sales="2000-15000" data-amc="3500"><div class="inner"><div class="icon"><i class="fas fa-print"></i></div><h4>Printers & Peripherals</h4><p class="muted">Network printers, driver deployment, MFP configuration, preventive maintenance.</p><div class="tooltip"></div><button class="cta-btn" onclick="openContact('Printers & Peripherals')">Enquire</button></div></div>
+  <div class="card3d" data-sales="5000-15000" data-amc="2500"><div class="inner"><div class="icon"><i class="fas fa-hdd"></i></div><h4>Data Backup</h4><p class="muted">HDD/SSD recovery, RAID rebuild, NAS & cloud backup solutions with integrity checks.</p><div class="tooltip"></div><button class="cta-btn" onclick="openContact('Data Backup')">Enquire</button></div></div>
+  <div class="card3d" data-sales="3000-12000" data-amc="2000"><div class="inner"><div class="icon"><i class="fas fa-shield-alt"></i></div><h4>Security & AMC</h4><p class="muted">Firewall, VPN, patching, AMC for CCTV & networking, preventive monitoring.</p><div class="tooltip"></div><button class="cta-btn" onclick="openContact('Security & AMC')">Enquire</button></div></div>
 </div>
 </section>
 
 <section id="rates" class="section">
 <h3>Services & Rates</h3>
 <table>
-  <thead>
-    <tr><th>Service</th><th>Sales Rate</th><th>AMC Rate</th><th>Remarks</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Networking</td><td>₹15,000 - 50,000</td><td>₹5,000 / Year</td><td>LAN/WAN Setup, CAT6/STP, Switches, VLANs</td></tr>
-    <tr><td>CCTV Installation</td><td>₹3,500 per camera</td><td>₹1,200 / Year</td><td>IP & Analog Cameras, NVR, Remote Monitoring</td></tr>
-  </tbody>
+<thead>
+<tr><th>Service</th><th>Sales Rate</th><th>AMC Rate</th><th>Details</th></tr>
+</thead>
+<tbody>
+<tr><td>Networking</td><td>₹15,000 - 50,000</td><td>₹5,000 / Year</td><td>LAN/WAN, Switches, VLAN, Fiber</td></tr>
+<tr><td>CCTV Installation</td><td>₹3,500 per camera</td><td>₹1,200 / Year</td><td>IP & Analog Cameras, NVR, Remote Monitoring</td></tr>
+<tr><td>Desktop Repair</td><td>₹800 - 2,500</td><td>₹500 / Year</td><td>OS install, RAM/HDD upgrade, Diagnostics</td></tr>
+<tr><td>Printers & Peripherals</td><td>₹2,000 - 15,000</td><td>₹3,500 / Year</td><td>Network printer setup, MFP, preventive maintenance</td></tr>
+<tr><td>Data Backup</td><td>₹5,000 - 15,000</td><td>₹2,500 / Year</td><td>NAS/Cloud Backup, RAID rebuild, recovery</td></tr>
+<tr><td>Security & AMC</td><td>₹3,000 - 12,000</td><td>₹2,000 / Year</td><td>Firewall, VPN, patching, CCTV AMC</td></tr>
+</tbody>
 </table>
 </section>
 
@@ -181,25 +175,14 @@ textarea{min-height:120px;resize:vertical}
   <div class="muted">© 2025 Sparsh Infotech • Pankaj Tambe • UDYAM_MH-28-0078744</div>
 </footer>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <span class="close" id="lbClose">?</span>
-  <img id="lbImg" src="" alt="expanded">
-</div>
-
 <a href="https://wa.me/919527023124" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a>
 
 </div>
 
 <script>
-// Lightbox
+// Lightbox (optional)
 const galleryImgs = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-const lbClose = document.getElementById('lbClose');
-galleryImgs.forEach(img => { img.addEventListener('click', ()=>{ lbImg.src = img.dataset.full||img.src; lightbox.style.display='flex'; }); });
-lbClose.addEventListener('click', ()=> lightbox.style.display='none');
-lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.style.display='none'; });
+galleryImgs.forEach(img => { img.addEventListener('click', ()=>{ window.open(img.src,'_blank'); }); });
 
 // Contact form offline storage + email
 const form = document.getElementById('contactForm');
@@ -238,15 +221,17 @@ document.getElementById('whatsappBtn').addEventListener('click', ()=>{
 });
 
 // 3D Card tooltip
-document.querySelectorAll('.card3d .inner').forEach(card=>{
-  const tooltip = card.querySelector('.tooltip');
-  tooltip.textContent = `Sales Rate: ${card.parentElement.dataset.sales} | AMC Rate: ${card.parentElement.dataset.amc}`;
-  card.addEventListener('mouseenter', ()=>{ card.classList.add('show-tooltip'); });
-  card.addEventListener('mouseleave', ()=>{ card.classList.remove('show-tooltip'); });
-  card.addEventListener('click', ()=>{ card.classList.toggle('show-tooltip'); });
+document.querySelectorAll('.card3d').forEach(card=>{
+  const inner = card.querySelector('.inner');
+  const tooltip = inner.querySelector('.tooltip');
+  inner.addEventListener('mouseenter', ()=>{
+    tooltip.textContent = `Sales: ₹${card.dataset.sales} | AMC: ₹${card.dataset.amc}`;
+    inner.classList.add('show-tooltip');
+  });
+  inner.addEventListener('mouseleave', ()=>inner.classList.remove('show-tooltip'));
 });
 
-function openContact(service){ document.getElementById('service').value = service; window.location.href="#contact"; }
+function openContact(service){ document.getElementById('service').value = service; window.scrollTo({top:document.getElementById('contact').offsetTop,behavior:'smooth'});}
 </script>
 </body>
 </html>
